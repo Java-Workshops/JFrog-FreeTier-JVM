@@ -15,7 +15,7 @@ resources:
 pipelines:
   - name: JFrog-FreeTier-JVM
     steps:
-      - name: maven-build - clean verify
+      - name: maven-build-clean-verify
         type: MvnBuild
         configuration:
           sourceLocation: .
