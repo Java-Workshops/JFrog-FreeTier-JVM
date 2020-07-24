@@ -53,12 +53,13 @@
   </licenses>
 
   <properties>
-    <repo-release>http://jfrog-repo.sven-ruppert.de:8081/artifactory/libs-release</repo-release>
-    <repo-snapshot>http://jfrog-repo.sven-ruppert.de:8081/artifactory/libs-snapshot</repo-snapshot>
+    <jfrog.artifactory.url>https://svenr.jfrog.io/artifactory/</jfrog.artifactory.url>
 
-    <deploy-repo-url>http://jfrog-repo.sven-ruppert.de:8081/artifactory/libs-release</deploy-repo-url>
-    <deploy-repo-snapshots-url>http://jfrog-repo.sven-ruppert.de:8081/artifactory/libs-snapshot
-    </deploy-repo-snapshots-url>
+    <repo-release>${jfrog.artifactory.url}libs-release/</repo-release>
+    <repo-snapshot>${jfrog.artifactory.url}libs-snapshot/</repo-snapshot>
+
+    <deploy-repo-url>${jfrog.artifactory.url}libs-release/</deploy-repo-url>
+    <deploy-repo-snapshots-url>${jfrog.artifactory.url}libs-snapshot/</deploy-repo-snapshots-url>
 
     <jdk.version>1.8</jdk.version>
     <!--technical-->
@@ -72,6 +73,15 @@
     <minimum-maven.version>3.3.9</minimum-maven.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+
+    <artifactory-maven-plugin.contextUrl>http://svenrjfrog.io</artifactory-maven-plugin.contextUrl>
+<!--    <artifactory-maven-plugin.username>username</artifactory-maven-plugin.username>-->
+<!--    <artifactory-maven-plugin.password>password</artifactory-maven-plugin.password>-->
+    <artifactory-maven-plugin.buildNumber>buildnumber</artifactory-maven-plugin.buildNumber>
+    <artifactory-maven-plugin.buildUrl>build-url</artifactory-maven-plugin.buildUrl>
+    <artifactory-maven-plugin.violationRecipients>build@organisation.com</artifactory-maven-plugin.violationRecipients>
+
   </properties>
 
   <distributionManagement>
@@ -188,13 +198,18 @@
           <version>3.2.0</version>
         </plugin>
 
-
+<!--    JUnit5-->
         <plugin>
           <groupId>de.sormuras.junit</groupId>
           <artifactId>junit-platform-maven-plugin</artifactId>
           <version>1.0.0-M5</version>
         </plugin>
-
+<!--    JFrog-->
+        <plugin>
+          <groupId>org.jfrog.buildinfo</groupId>
+          <artifactId>artifactory-maven-plugin</artifactId>
+          <version>2.6.1</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -248,6 +263,52 @@
           <!--</tags>-->
         </configuration>
       </plugin>
+
+<!--      JFRog-->
+      <plugin>
+        <groupId>org.jfrog.buildinfo</groupId>
+        <artifactId>artifactory-maven-plugin</artifactId>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>build-info</id>
+            <goals>
+              <goal>publish</goal>
+            </goals>
+            <configuration>
+              <deployProperties>
+              </deployProperties>
+              <artifactory>
+                <includeEnvVars>true</includeEnvVars>
+                <envVarsExcludePatterns>*password*,*secret*,*key*,*token*,*passphrase*</envVarsExcludePatterns>
+                <timeoutSec>60</timeoutSec>
+              </artifactory>
+              <publisher>
+                <contextUrl>${artifactory-maven-plugin.contextUrl}</contextUrl>
+<!--                <username>${artifactory-maven-plugin.username}</username>-->
+<!--                <password>${artifactory-maven-plugin.password}</password>-->
+                <excludePatterns>*-tests.jar</excludePatterns>
+                <repoKey>libs-release-local</repoKey>
+                <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+              </publisher>
+              <buildInfo>
+                <buildName>plugin-demo</buildName>
+                <buildNumber>${artifactory-maven-plugin.buildNumber}</buildNumber>
+                <buildUrl>${artifactory-maven-plugin.buildUrl}</buildUrl>
+              </buildInfo>
+              <licenses>
+                <autoDiscover>true</autoDiscover>
+                <includePublishedArtifacts>false</includePublishedArtifacts>
+                <runChecks>true</runChecks>
+                <scopes>compile,runtime</scopes>
+                <violationRecipients>${artifactory-maven-plugin.violationRecipients}</violationRecipients>
+              </licenses>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+
     </plugins>
   </build>
 

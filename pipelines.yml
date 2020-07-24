@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: github_svenruppert               # Change to your integration
-      path: Java-Workshops/JFrog-FreeTier-JVM             # Change to your repo
+      path: Java-Workshops/JFrog-FreeTier-JVM       # Change to your repo
   # Build info for the application
   - name: build_info
     type: BuildInfo
@@ -15,13 +15,13 @@ resources:
 pipelines:
   - name: JFrog_FreeTier_JVM
     steps:
-      - name: maven_build_clean_verify
+      - name: maven_build_clean
         type: MvnBuild
         configuration:
           sourceLocation: .
-          mvnCommand: clean verify
-          configFileLocation: .
-          configFileName: mvn-art-config
+          mvnCommand: clean
+#          configFileLocation: .
+#          configFileName: mvn-art-config
           inputResources:
             - name: GIT_JFrog_FreeTier_JVM
           integrations:
@@ -37,3 +37,54 @@ pipelines:
           onStart:
             - javac -version
             - mvn --version
+
+      - name: maven_build_test
+        type: MvnBuild
+        configuration:
+          sourceLocation: .
+          mvnCommand: test
+          inputResources:
+            - name: GIT_JFrog_FreeTier_JVM
+          integrations:
+            - name: svenr_jfrog_io
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - "11"
+
+      - name: maven_build_verify
+        type: MvnBuild
+        configuration:
+          sourceLocation: .
+          mvnCommand: verify
+          inputResources:
+            - name: GIT_JFrog_FreeTier_JVM
+          integrations:
+            - name: svenr_jfrog_io
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - "11"
+
+#      - name: maven_build_deploy
+#        type: MvnBuild
+#        configuration:
+#          sourceLocation: .
+#          mvnCommand: deploy
+#          inputResources:
+#            - name: GIT_JFrog_FreeTier_JVM
+#          integrations:
+#            - name: svenr_jfrog_io
+#          runtime:
+#            type: image
+#            image:
+#              auto:
+#                language: java
+#                versions:
+#                  - "11"
