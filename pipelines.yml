@@ -20,10 +20,12 @@ pipelines:
         configuration:
           sourceLocation: .
           mvnCommand: clean
-#          configFileLocation: .
-#          configFileName: mvn-art-config
+          configFileLocation: .
+          configFileName: mvn-art-config
           inputResources:
             - name: GIT_JFrog_FreeTier_JVM
+          outputResources:
+            - name: build_info
           integrations:
             - name: svenr_jfrog_io
           runtime:
@@ -43,8 +45,12 @@ pipelines:
         configuration:
           sourceLocation: .
           mvnCommand: test
+          configFileLocation: .
+          configFileName: mvn-art-config
           inputResources:
             - name: GIT_JFrog_FreeTier_JVM
+          outputResources:
+            - name: build_info
           integrations:
             - name: svenr_jfrog_io
           runtime:
@@ -60,6 +66,8 @@ pipelines:
         configuration:
           sourceLocation: .
           mvnCommand: verify
+          configFileLocation: .
+          configFileName: mvn-art-config
           inputResources:
             - name: GIT_JFrog_FreeTier_JVM
           integrations:
