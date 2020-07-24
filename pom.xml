@@ -143,6 +143,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <pluginManagement>
       <plugins>
@@ -171,8 +172,6 @@
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-
-
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-repository-plugin</artifactId>
@@ -199,10 +198,6 @@
       </plugins>
     </pluginManagement>
     <plugins>
-      <!--      <plugin>-->
-      <!--        <groupId>org.apache.maven.plugins</groupId>-->
-      <!--        <artifactId>maven-compiler-plugin</artifactId>-->
-      <!--      </plugin>-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -232,7 +227,7 @@
         <artifactId>junit-platform-maven-plugin</artifactId>
         <extensions>true</extensions> <!-- Necessary to execute it in 'test' phase. -->
         <configuration>
-<!--          <timeout>${junit-platform-maven-plugin.timeout}</timeout>-->
+          <!--          <timeout>${junit-platform-maven-plugin.timeout}</timeout>-->
           <classNamePatterns>
             <pattern>^(Test.*|.*Test*.|.+[.$]Test.*|.*Tests?)$</pattern>
             <pattern>.*TestCase</pattern>
@@ -244,7 +239,7 @@
           <javaOptions>
             <additionalOptions>
               <!--<protools>-Dactivate.vaadin.protools=false</protools>-->
-<!--              <jacoco>${jacoco.java.option}</jacoco>-->
+              <!--              <jacoco>${jacoco.java.option}</jacoco>-->
             </additionalOptions>
           </javaOptions>
 

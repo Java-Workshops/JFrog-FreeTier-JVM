@@ -1,0 +1,39 @@
+resources:
+  - name: GIT-JFrog-FreeTier-JVM
+    type: GitRepo
+    configuration:
+      gitProvider: github_svenruppert_jfrog               # Change to your integration
+      path: Java-Workshops/JFrog-FreeTier-JVM             # Change to your repo
+  # Build info for the application
+  - name: build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: svenr_jfrog_io
+      buildName: Build_JFrog-FreeTier-JVM
+      buildNumber: 1
+
+pipelines:
+  - name: JFrog-FreeTier-JVM
+    steps:
+      - name: maven-build - clean verify
+        type: MvnBuild
+        configuration:
+          sourceLocation: .
+          mvnCommand: clean verify
+          configFileLocation: .
+          configFileName: mvn-art-config
+          inputResources:
+            - name: GIT-JFrog-FreeTier-JVM
+          integrations:
+            - name: svenr_jfrog_io
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - "11"
+        execution:
+          onStart:
+            - javac -version
+            - mvn --version
