@@ -13,7 +13,7 @@ resources:
       buildNumber: 1
 
 pipelines:
-  - name: JFrog-FreeTier-JVM
+  - name: JFrog_FreeTier_JVM
     steps:
       - name: maven_build_clean_verify
         type: MvnBuild
