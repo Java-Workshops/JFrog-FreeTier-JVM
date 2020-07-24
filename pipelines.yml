@@ -1,5 +1,5 @@
 resources:
-  - name: GIT-JFrog-FreeTier-JVM
+  - name: GIT_JFrog_FreeTier_JVM
     type: GitRepo
     configuration:
       gitProvider: github_svenruppert               # Change to your integration
@@ -23,7 +23,7 @@ pipelines:
           configFileLocation: .
           configFileName: mvn-art-config
           inputResources:
-            - name: GIT-JFrog-FreeTier-JVM
+            - name: GIT_JFrog_FreeTier_JVM
           integrations:
             - name: svenr_jfrog_io
           runtime:
