@@ -37,8 +37,3 @@ pipelines:
           onStart:
             - javac -version
             - mvn --version
-
-
-Unable to add Java-Workshops/JFrog-FreeTier-JVM as a pipeline source.
-Either the repository path is invalid or the URL or credentials used in the integration:
-  github_svenruppert_jfrog does not have admin access to the repository.
