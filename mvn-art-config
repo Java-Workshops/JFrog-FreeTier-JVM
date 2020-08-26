@@ -1,0 +1,11 @@
+  
+version: 1
+type: maven
+resolver:
+  snapshotRepo: libs-snapshot
+  releaseRepo: libs-release
+  serverID: svenruppert_jfrog_io
+deployer:
+  snapshotRepo: libs-snapshot-local
+  releaseRepo: libs-release-local
+  serverID: svenruppert_jfrog_io
