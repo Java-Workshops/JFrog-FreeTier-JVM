@@ -2,10 +2,10 @@
 version: 1
 type: maven
 resolver:
-  snapshotRepo: libs-snapshot
-  releaseRepo: libs-release
+  snapshotRepo: maven-virtual-libs-snapshot
+  releaseRepo: maven-virtual-libs-release
   serverID: svenruppert_jfrog_io
 deployer:
-  snapshotRepo: libs-snapshot-local
-  releaseRepo: libs-release-local
+  snapshotRepo: maven-virtual-libs-snapshot
+  releaseRepo: maven-virtual-libs-release
   serverID: svenruppert_jfrog_io
