@@ -67,7 +67,7 @@ pipelines:
         type: MvnBuild
         configuration:
           inputSteps:
-            -name: maven_build_test
+            - name: maven_build_test
           sourceLocation: .
           mvnCommand: verify
           configFileLocation: .
