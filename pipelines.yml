@@ -83,6 +83,7 @@ pipelines:
                 language: java
                 versions:
                   - "11"
+
       - name: publish_app_build
         type: PublishBuildInfo
         configuration:
