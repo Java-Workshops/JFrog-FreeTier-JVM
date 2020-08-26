@@ -76,6 +76,17 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 
+    <!--TDD jUnit5-->
+    <junit.jupiter.version>5.7.0-M1</junit.jupiter.version>
+    <junit.platform.version>1.7.0-M1</junit.platform.version>
+    <junit-platform-maven-plugin.version>1.0.0-M5</junit-platform-maven-plugin.version>
+
+    <jacoco.version>0.8.5</jacoco.version>
+    <pitest.version>1.5.0</pitest.version>
+    <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
+    <pitest-prod-classes>org.rapidpm.*</pitest-prod-classes>
+    <pitest-test-classes>junit.org.rapidpm*</pitest-test-classes>
+
 <!--    <artifactory-maven-plugin.contextUrl>http://svenr.jfrog.io</artifactory-maven-plugin.contextUrl>-->
 <!--&lt;!&ndash;    <artifactory-maven-plugin.username>username</artifactory-maven-plugin.username>&ndash;&gt;-->
 <!--&lt;!&ndash;    <artifactory-maven-plugin.password>password</artifactory-maven-plugin.password>&ndash;&gt;-->
@@ -255,7 +266,7 @@
           <javaOptions>
             <additionalOptions>
               <!--<protools>-Dactivate.vaadin.protools=false</protools>-->
-              <!--              <jacoco>${jacoco.java.option}</jacoco>-->
+                            <jacoco>${jacoco.java.option}</jacoco>
             </additionalOptions>
           </javaOptions>
 
@@ -264,6 +275,35 @@
           <!--</tags>-->
         </configuration>
       </plugin>
+
+      <!--Enable mutation testing-->
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>${pitest.version}</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-junit5-plugin</artifactId>
+            <version>${pitest-junit5-plugin.version}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <threads>2</threads>
+          <outputFormats>
+            <outputFormat>XML</outputFormat>
+            <outputFormat>HTML</outputFormat>
+          </outputFormats>
+          <targetClasses>
+            <param>${pitest-prod-classes}</param>
+            <!--<param>org.reflections.*</param>-->
+          </targetClasses>
+          <targetTests>
+            <param>${pitest-test-classes}</param>
+          </targetTests>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 
@@ -340,4 +380,33 @@
     </profile>
   </profiles>
 
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <!-- select non-aggregate reports -->
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>

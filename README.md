@@ -91,18 +91,32 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 (DE) - 
 
 
-
-## create a Generic Repo
-Create a geeric repo and load Jabba into it
-change the Dockerfile to get this one used
-How to extract the credentials
-
-
-
-
 ## create a remote Docker Repo
+Create a remote Docker Repo called **docker-remote-dockerio** 
+with the target **https://registry-1.docker.io/** 
+and try to pull the image **buildpack-deps:buster-curl**
+Login into the new Docker Repo.
 
 ## create a local Docker Repo
+Create a local Docker Repo with the name **docker-local**.
+Login into the Docker Repo;
+
+## create a virtual Docker Repo
+Create a virtual DockerRepo called **docker-virtual** and include the both created Docker repos into it.
+Define as default Deloyment Repository the local one.
+
+Login into the Docker Repo as well: **docker login svenruppert-docker-virtual.jfrog.io**
+
+
+## create a Generic Repo
+Create a generic repo and load Jabba into it
+change the Dockerfile to get this one used
+How to extract the credentials from the UI
+
+Do the same with the maven aproach
+
+
+
 
 ## create a remote Maven repo
 

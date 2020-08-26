@@ -92,4 +92,35 @@ pipelines:
             - name: maven_build_verify
           outputResources:
             - name: build_info
+              -
+
+      - name: maven_build_pitreport
+        type: MvnBuild
+        configuration:
+          inputSteps:
+            - name: maven_build_test
+          sourceLocation: .
+          mvnCommand: verify
+          configFileLocation: .
+          configFileName: mvn-art-config
+          inputResources:
+            - name: GIT_JFrog_FreeTier_JVM
+          integrations:
+            - name: svenruppert_jfrog_io          # Change to your instance
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - "11"
+
+      - name: publish_app_build
+        type: PublishBuildInfo
+        configuration:
+          forceXrayScan: true
+          inputSteps:
+            - name: maven_build_pitreport
+          outputResources:
+            - name: build_info
 
