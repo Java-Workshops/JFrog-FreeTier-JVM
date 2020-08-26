@@ -15,6 +15,44 @@ resources:
 pipelines:
   - name: JFrog_FreeTier_JVM
     steps:
+
+      - name: docker_build_jdk
+          type: DockerBuild
+          configuration:
+            dockerFileLocation: _data/adopt@1.8.0-172
+            dockerFileName: Dockerfile
+            dockerImageName: svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/adopt  # replace with your image path and name
+#            dockerImageTag: ${run_number}
+            dockerImageTag: 1.8.0-172
+          inputResources:
+            - name: GIT_JFrog_FreeTier_JVM
+          outputResources:
+            - name: build_info
+          integrations:
+            - name: svenruppert_jfrog_io
+              -
+      - name: docker_push_jdk
+        type: DockerPush
+        configuration:
+          targetRepository: docker-virtual
+          integrations:
+            - name: svenruppert_jfrog_io    # replace with your artifactory integration
+          inputSteps:
+            - name: docker_build_jdk
+          outputResources:
+            - name: build_info
+
+      - name: publish_docker_push_jdk
+        type: PublishBuildInfo
+        configuration:
+          forceXrayScan: true
+          inputSteps:
+            - name: docker_push_jdk
+          outputResources:
+            - name: build_info
+
+
+
       - name: maven_build_clean
         type: MvnBuild
         configuration:
@@ -99,7 +137,7 @@ pipelines:
           inputSteps:
             - name: maven_build_test
           sourceLocation: .
-          mvnCommand: pitest:mutationCoverage
+          mvnCommand: test pitest:mutationCoverage
           configFileLocation: .
           configFileName: mvn-art-config
           inputResources:
