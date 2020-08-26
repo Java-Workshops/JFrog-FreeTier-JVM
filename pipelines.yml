@@ -92,7 +92,6 @@ pipelines:
             - name: maven_build_verify
           outputResources:
             - name: build_info
-              -
 
       - name: maven_build_pitreport
         type: MvnBuild
