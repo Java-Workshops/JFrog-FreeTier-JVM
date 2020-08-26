@@ -68,6 +68,21 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 ##  XXXXXXXXXXX
 
 
+## create a Generic Repo
+
+## create a remote Docker Repo
+
+## create a local Docker Repo
+
+## create a remote Maven repo
+
+## create a local maven repo
+
+## create a virtual maven and Docker repo 
+
+## secure your platform
+
+## FreeTier Maintenance
 
 
 ## IDE Plugin - Scan for Vulnerabilities
@@ -111,6 +126,9 @@ If you are to lazy to read, try my JFrog HowTo.
 (DE) -
 
  
+
+
+## Start with Pipelines
 
 
 
