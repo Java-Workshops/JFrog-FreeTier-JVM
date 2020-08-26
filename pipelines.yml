@@ -93,5 +93,5 @@ pipelines:
           targetRepository: gradle-release-local
           inputResources:
       - name: gradleBuildInfo
-          outputResources:
+        outputResources:
       - name: gradleBuildInfoPromoted
