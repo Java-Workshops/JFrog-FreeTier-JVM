@@ -56,8 +56,8 @@
 <!--    <jfrog.artifactory.url>https://svenr.jfrog.io/artifactory/</jfrog.artifactory.url>-->
     <jfrog.artifactory.url>https://svenruppert.jfrog.io/artifactory/</jfrog.artifactory.url>
 
-    <repo-release>${jfrog.artifactory.url}libs-release/</repo-release>
-    <repo-snapshot>${jfrog.artifactory.url}libs-snapshot/</repo-snapshot>
+    <repo-release>${jfrog.artifactory.url}maven-virtual-libs-release/</repo-release>
+    <repo-snapshot>${jfrog.artifactory.url}maven-virtual-libs-snapshot/</repo-snapshot>
 
     <deploy-repo-url>${jfrog.artifactory.url}libs-release/</deploy-repo-url>
     <deploy-repo-snapshots-url>${jfrog.artifactory.url}libs-snapshot/</deploy-repo-snapshots-url>

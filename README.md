@@ -47,6 +47,31 @@ You can use the bundled maven version. The archive is inside the folder **_data/
 the maven version 3.6.3 as tar.gz file.
 
 
+## Timetable and Agenda
+The tutorial is planned to be done in approx 2h in total.
+
+The BirdEyeView:
+* Intro into the JFrog Platform
+* A demo how to use a generic repo
+* Docker and the first steps
+* Maven and the HelloWorld
+* Vulnerabilities and how to visualize them
+* Pipelines Intro
+
+10 min: Intro check out the git repository and get the Overview about the JFrog Platform in general
+10 min: Short Navigation inside the JFrog Platform as an admin
+10 min: Generic Repos and what you could do with it
+10 min:
+10 min:
+10 min:
+10 min:
+10 min:
+10 min:
+10 min:
+10 min:
+10 min:
+
+
 ## The tutorial itself
 Lets start with the tutorial now! The plan is, to finish all steps in approx 2h.
 I will give you from time to time some 
@@ -65,10 +90,15 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 (EN) -
 (DE) - 
 
-##  XXXXXXXXXXX
 
 
 ## create a Generic Repo
+Create a geeric repo and load Jabba into it
+change the Dockerfile to get this one used
+How to extract the credentials
+
+
+
 
 ## create a remote Docker Repo
 
