@@ -34,7 +34,7 @@ pipelines:
       - name: docker_push_jdk
         type: DockerPush
         configuration:
-          affinityGroup: group_docker_build_jdk
+          affinityGroup: group_docker_build_jdk #share state
           targetRepository: docker-virtual
           integrations:
             - name: svenruppert_jfrog_io    # replace with your artifactory integration
@@ -51,6 +51,48 @@ pipelines:
             - name: docker_push_jdk
           outputResources:
             - name: build_info
+
+
+
+
+      - name: docker_build_maven
+        type: DockerBuild
+        configuration:
+          affinityGroup: group_docker_build_maven
+          dockerFileLocation: _data/adopt@1.8.0-172_maven_3.6.3
+          dockerFileName: Dockerfile
+          dockerImageName: svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/maven-3.6.3-adopt  # replace with your image path and name
+          #            dockerImageTag: ${run_number}
+          dockerImageTag: 1.8.0-172
+          inputResources:
+            - name: GIT_JFrog_FreeTier_JVM
+          outputResources:
+            - name: build_info
+          integrations:
+            - name: svenruppert_jfrog_io
+
+      - name: docker_push_maven
+        type: DockerPush
+        configuration:
+          affinityGroup: group_docker_build_maven #share state
+          targetRepository: docker-virtual
+          integrations:
+            - name: svenruppert_jfrog_io    # replace with your artifactory integration
+          inputSteps:
+            - name: docker_build_jdk
+          outputResources:
+            - name: build_info
+
+      - name: publish_docker_push_maven
+        type: PublishBuildInfo
+        configuration:
+          forceXrayScan: true
+          inputSteps:
+            - name: docker_push_maven
+          outputResources:
+            - name: build_info
+
+
 
 
 
