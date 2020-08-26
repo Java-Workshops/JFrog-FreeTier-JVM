@@ -264,52 +264,6 @@
           <!--</tags>-->
         </configuration>
       </plugin>
-
-<!--      JFRog-->
-<!--      <plugin>-->
-<!--        <groupId>org.jfrog.buildinfo</groupId>-->
-<!--        <artifactId>artifactory-maven-plugin</artifactId>-->
-<!--        <inherited>false</inherited>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <id>build-info</id>-->
-<!--            <goals>-->
-<!--              <goal>publish</goal>-->
-<!--            </goals>-->
-<!--            <configuration>-->
-<!--              <deployProperties>-->
-<!--              </deployProperties>-->
-<!--              <artifactory>-->
-<!--                <includeEnvVars>true</includeEnvVars>-->
-<!--                <envVarsExcludePatterns>*password*,*secret*,*key*,*token*,*passphrase*</envVarsExcludePatterns>-->
-<!--                <timeoutSec>60</timeoutSec>-->
-<!--              </artifactory>-->
-<!--              <publisher>-->
-<!--                <contextUrl>${artifactory-maven-plugin.contextUrl}</contextUrl>-->
-<!--&lt;!&ndash;                <username>${artifactory-maven-plugin.username}</username>&ndash;&gt;-->
-<!--&lt;!&ndash;                <password>${artifactory-maven-plugin.password}</password>&ndash;&gt;-->
-<!--                <excludePatterns>*-tests.jar</excludePatterns>-->
-<!--                <repoKey>libs-release-local</repoKey>-->
-<!--                <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>-->
-<!--              </publisher>-->
-<!--              <buildInfo>-->
-<!--                <buildName>plugin-demo</buildName>-->
-<!--                <buildNumber>${artifactory-maven-plugin.buildNumber}</buildNumber>-->
-<!--                <buildUrl>${artifactory-maven-plugin.buildUrl}</buildUrl>-->
-<!--              </buildInfo>-->
-<!--              <licenses>-->
-<!--                <autoDiscover>true</autoDiscover>-->
-<!--                <includePublishedArtifacts>false</includePublishedArtifacts>-->
-<!--                <runChecks>true</runChecks>-->
-<!--                <scopes>compile,runtime</scopes>-->
-<!--                <violationRecipients>${artifactory-maven-plugin.violationRecipients}</violationRecipients>-->
-<!--              </licenses>-->
-<!--            </configuration>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--      </plugin>-->
-
-
     </plugins>
   </build>
 
