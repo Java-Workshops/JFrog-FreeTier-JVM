@@ -53,7 +53,7 @@
   </licenses>
 
   <properties>
-<!--    <jfrog.artifactory.url>https://svenr.jfrog.io/artifactory/</jfrog.artifactory.url>-->
+    <!--    <jfrog.artifactory.url>https://svenr.jfrog.io/artifactory/</jfrog.artifactory.url>-->
     <jfrog.artifactory.url>https://svenruppert.jfrog.io/artifactory/</jfrog.artifactory.url>
 
     <repo-release>${jfrog.artifactory.url}maven-virtual-libs-release/</repo-release>
@@ -77,22 +77,22 @@
 
 
     <!--TDD jUnit5-->
-    <junit.jupiter.version>5.7.0-M1</junit.jupiter.version>
-    <junit.platform.version>1.7.0-M1</junit.platform.version>
-    <junit-platform-maven-plugin.version>1.0.0-M5</junit-platform-maven-plugin.version>
+    <junit.jupiter.version>5.7.0-RC1</junit.jupiter.version>
+    <junit.platform.version>1.7.0-RC1</junit.platform.version>
+    <junit-platform-maven-plugin.version>1.1.0</junit-platform-maven-plugin.version>
 
     <jacoco.version>0.8.5</jacoco.version>
-    <pitest.version>1.5.0</pitest.version>
+    <pitest.version>1.5.2</pitest.version>
     <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
     <pitest-prod-classes>org.rapidpm.*</pitest-prod-classes>
     <pitest-test-classes>junit.org.rapidpm*</pitest-test-classes>
 
-<!--    <artifactory-maven-plugin.contextUrl>http://svenr.jfrog.io</artifactory-maven-plugin.contextUrl>-->
-<!--&lt;!&ndash;    <artifactory-maven-plugin.username>username</artifactory-maven-plugin.username>&ndash;&gt;-->
-<!--&lt;!&ndash;    <artifactory-maven-plugin.password>password</artifactory-maven-plugin.password>&ndash;&gt;-->
-<!--    <artifactory-maven-plugin.buildNumber>buildnumber</artifactory-maven-plugin.buildNumber>-->
-<!--    <artifactory-maven-plugin.buildUrl>build-url</artifactory-maven-plugin.buildUrl>-->
-<!--    <artifactory-maven-plugin.violationRecipients>build@organisation.com</artifactory-maven-plugin.violationRecipients>-->
+    <!--    <artifactory-maven-plugin.contextUrl>http://svenr.jfrog.io</artifactory-maven-plugin.contextUrl>-->
+    <!--&lt;!&ndash;    <artifactory-maven-plugin.username>username</artifactory-maven-plugin.username>&ndash;&gt;-->
+    <!--&lt;!&ndash;    <artifactory-maven-plugin.password>password</artifactory-maven-plugin.password>&ndash;&gt;-->
+    <!--    <artifactory-maven-plugin.buildNumber>buildnumber</artifactory-maven-plugin.buildNumber>-->
+    <!--    <artifactory-maven-plugin.buildUrl>build-url</artifactory-maven-plugin.buildUrl>-->
+    <!--    <artifactory-maven-plugin.violationRecipients>build@organisation.com</artifactory-maven-plugin.violationRecipients>-->
 
   </properties>
 
@@ -153,7 +153,7 @@
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>5.7.0-M1</version>
+        <version>${junit.jupiter.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -210,13 +210,18 @@
           <version>3.2.0</version>
         </plugin>
 
-<!--    JUnit5-->
+        <!--    JUnit5-->
         <plugin>
           <groupId>de.sormuras.junit</groupId>
           <artifactId>junit-platform-maven-plugin</artifactId>
-          <version>1.0.0-M5</version>
+          <version>${junit-platform-maven-plugin.version}</version>
         </plugin>
-<!--    JFrog-->
+        <plugin>
+          <groupId>org.pitest</groupId>
+          <artifactId>pitest-maven</artifactId>
+          <version>${pitest.version}</version>
+        </plugin>
+        <!--    JFrog-->
         <plugin>
           <groupId>org.jfrog.buildinfo</groupId>
           <artifactId>artifactory-maven-plugin</artifactId>
@@ -224,6 +229,8 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -254,19 +261,13 @@
         <artifactId>junit-platform-maven-plugin</artifactId>
         <extensions>true</extensions> <!-- Necessary to execute it in 'test' phase. -->
         <configuration>
-          <!--          <timeout>${junit-platform-maven-plugin.timeout}</timeout>-->
-          <classNamePatterns>
-            <pattern>^(Test.*|.*Test*.|.+[.$]Test.*|.*Tests?)$</pattern>
-            <pattern>.*TestCase</pattern>
-          </classNamePatterns>
           <tweaks>
             <failIfNoTests>false</failIfNoTests>
           </tweaks>
           <executor>JAVA</executor>
           <javaOptions>
             <additionalOptions>
-              <!--<protools>-Dactivate.vaadin.protools=false</protools>-->
-                            <jacoco>${jacoco.java.option}</jacoco>
+<!--              <jacoco>${jacoco.java.option}</jacoco>-->
             </additionalOptions>
           </javaOptions>
 
