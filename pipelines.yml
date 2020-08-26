@@ -80,35 +80,18 @@ pipelines:
                 versions:
                   - "11"
 
-#      - name: maven_build_deploy
-#        type: MvnBuild
-#        configuration:
-#          sourceLocation: .
-#          mvnCommand: deploy
-#          inputResources:
-#            - name: GIT_JFrog_FreeTier_JVM
-#          integrations:
-#            - name: svenruppert_jfrog_io
-#          runtime:
-#            type: image
-#            image:
-#              auto:
-#                language: java
-#                versions:
-#                  - "11"
-
-    - name: publishJavaBuild
+      - name: publishJavaBuild
         type: PublishBuildInfo
         configuration:
           inputSteps:
             - name: step1_pipeline_buildWithGradle
           outputResources:
             - name: gradleBuildInfo
-        - name: promoteJavaBuild
-          type: PromoteBuild
-          configuration:
-            targetRepository: gradle-release-local
-            inputResources:
-              - name: gradleBuildInfo
-            outputResources:
-              - name: gradleBuildInfoPromoted
+      - name: promoteJavaBuild
+        type: PromoteBuild
+        configuration:
+          targetRepository: gradle-release-local
+          inputResources:
+      - name: gradleBuildInfo
+          outputResources:
+      - name: gradleBuildInfoPromoted
