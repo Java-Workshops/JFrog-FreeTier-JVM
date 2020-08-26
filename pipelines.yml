@@ -44,7 +44,7 @@ pipelines:
         type: MvnBuild
         configuration:
           inputSteps:
-            -name: maven_build_clean
+            - name: maven_build_clean
           sourceLocation: .
           mvnCommand: test
           configFileLocation: .
