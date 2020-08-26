@@ -53,8 +53,6 @@ pipelines:
             - name: build_info
 
 
-
-
       - name: docker_build_maven
         type: DockerBuild
         configuration:
@@ -91,9 +89,6 @@ pipelines:
             - name: docker_push_maven
           outputResources:
             - name: build_info
-
-
-
 
 
       - name: maven_build_clean
