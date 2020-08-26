@@ -15,22 +15,21 @@ resources:
 pipelines:
   - name: JFrog_FreeTier_JVM
     steps:
-
       - name: docker_build_jdk
-          type: DockerBuild
-          configuration:
-            dockerFileLocation: _data/adopt@1.8.0-172
-            dockerFileName: Dockerfile
-            dockerImageName: svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/adopt  # replace with your image path and name
-#            dockerImageTag: ${run_number}
-            dockerImageTag: 1.8.0-172
+        type: DockerBuild
+        configuration:
+          dockerFileLocation: _data/adopt@1.8.0-172
+          dockerFileName: Dockerfile
+          dockerImageName: svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/adopt  # replace with your image path and name
+            #            dockerImageTag: ${run_number}
+          dockerImageTag: 1.8.0-172
           inputResources:
             - name: GIT_JFrog_FreeTier_JVM
           outputResources:
             - name: build_info
           integrations:
             - name: svenruppert_jfrog_io
-              -
+
       - name: docker_push_jdk
         type: DockerPush
         configuration:
