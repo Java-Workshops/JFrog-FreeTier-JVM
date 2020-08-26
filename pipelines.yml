@@ -84,7 +84,7 @@ pipelines:
                 versions:
                   - "11"
 
-      - name: publish_app_build
+      - name: publish_maven_build_verify
         type: PublishBuildInfo
         configuration:
           forceXrayScan: true
@@ -114,7 +114,7 @@ pipelines:
                 versions:
                   - "11"
 
-      - name: publish_app_build
+      - name: publish_maven_build_pitreport
         type: PublishBuildInfo
         configuration:
           forceXrayScan: true
