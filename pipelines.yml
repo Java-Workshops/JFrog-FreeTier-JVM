@@ -100,7 +100,7 @@ pipelines:
           inputSteps:
             - name: maven_build_test
           sourceLocation: .
-          mvnCommand: verify
+          mvnCommand: pitest:mutationCoverage
           configFileLocation: .
           configFileName: mvn-art-config
           inputResources:
