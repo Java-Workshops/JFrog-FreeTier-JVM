@@ -87,7 +87,7 @@ pipelines:
       - name: publish_app_build
         type: PublishBuildInfo
         configuration:
-          forceXrayScan: false
+          forceXrayScan: true
           inputSteps:
             - name: maven_build_verify
           outputResources:
