@@ -18,6 +18,7 @@ pipelines:
       - name: docker_build_jdk
         type: DockerBuild
         configuration:
+          affinityGroup: group_docker_build_jdk
           dockerFileLocation: _data/adopt@1.8.0-172
           dockerFileName: Dockerfile
           dockerImageName: svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/adopt  # replace with your image path and name
@@ -33,6 +34,7 @@ pipelines:
       - name: docker_push_jdk
         type: DockerPush
         configuration:
+          affinityGroup: group_docker_build_jdk
           targetRepository: docker-virtual
           integrations:
             - name: svenruppert_jfrog_io    # replace with your artifactory integration
