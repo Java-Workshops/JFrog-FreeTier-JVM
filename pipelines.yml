@@ -80,18 +80,4 @@ pipelines:
                 versions:
                   - "11"
 
-      - name: publishJavaBuild
-        type: PublishBuildInfo
-        configuration:
-          inputSteps:
-            - name: step1_pipeline_buildWithGradle
-          outputResources:
-            - name: gradleBuildInfo
-      - name: promoteJavaBuild
-        type: PromoteBuild
-        configuration:
-          targetRepository: gradle-release-local
-          inputResources:
-      - name: gradleBuildInfo
-        outputResources:
-      - name: gradleBuildInfoPromoted
+     
