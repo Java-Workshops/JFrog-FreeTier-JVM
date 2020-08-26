@@ -91,5 +91,5 @@ pipelines:
           inputSteps:
             - name: maven_build_verify
           outputResources:
-            - name: appl_build_info
+            - name: build_info
 
