@@ -52,7 +52,6 @@ pipelines:
           outputResources:
             - name: build_info
 
-
       - name: docker_build_maven
         type: DockerBuild
         configuration:
