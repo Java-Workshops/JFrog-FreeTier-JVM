@@ -2,13 +2,13 @@ resources:
   - name: GIT_JFrog_FreeTier_JVM
     type: GitRepo
     configuration:
-      gitProvider: github_svenruppert               # Change to your integration
+      gitProvider: github_as_svenruppert            # Change to your integration
       path: Java-Workshops/JFrog-FreeTier-JVM       # Change to your repo
   # Build info for the application
   - name: build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: svenr_jfrog_io
+      sourceArtifactory: svenruppert_jfrog_io
       buildName: Build_JFrog-FreeTier-JVM
       buildNumber: 1
 
@@ -27,7 +27,7 @@ pipelines:
           outputResources:
             - name: build_info
           integrations:
-            - name: svenr_jfrog_io
+            - name: svenruppert_jfrog_io
           runtime:
             type: image
             image:
@@ -52,7 +52,7 @@ pipelines:
           outputResources:
             - name: build_info
           integrations:
-            - name: svenr_jfrog_io
+            - name: svenruppert_jfrog_io
           runtime:
             type: image
             image:
@@ -71,7 +71,7 @@ pipelines:
           inputResources:
             - name: GIT_JFrog_FreeTier_JVM
           integrations:
-            - name: svenr_jfrog_io
+            - name: svenruppert_jfrog_io
           runtime:
             type: image
             image:
@@ -88,7 +88,7 @@ pipelines:
 #          inputResources:
 #            - name: GIT_JFrog_FreeTier_JVM
 #          integrations:
-#            - name: svenr_jfrog_io
+#            - name: svenruppert_jfrog_io
 #          runtime:
 #            type: image
 #            image:
