@@ -83,13 +83,12 @@ pipelines:
                 language: java
                 versions:
                   - "11"
-
       - name: publish_app_build
-          type: PublishBuildInfo
-          configuration:
-            forceXrayScan: false
-            inputSteps:
-              - name: maven_build_verify
-            outputResources:
-              - name: appl_build_info
+        type: PublishBuildInfo
+        configuration:
+          forceXrayScan: false
+          inputSteps:
+            - name: maven_build_verify
+          outputResources:
+            - name: appl_build_info
 
