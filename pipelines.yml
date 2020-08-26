@@ -8,7 +8,7 @@ resources:
   - name: build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: svenruppert_jfrog_io
+      sourceArtifactory: svenruppert_jfrog_io       # Change to your instance
       buildName: Build_JFrog-FreeTier-JVM
       buildNumber: 1
 
@@ -27,7 +27,7 @@ pipelines:
           outputResources:
             - name: build_info
           integrations:
-            - name: svenruppert_jfrog_io
+            - name: svenruppert_jfrog_io            # Change to your instance
           runtime:
             type: image
             image:
@@ -52,7 +52,7 @@ pipelines:
           outputResources:
             - name: build_info
           integrations:
-            - name: svenruppert_jfrog_io
+            - name: svenruppert_jfrog_io          # Change to your instance
           runtime:
             type: image
             image:
@@ -71,7 +71,7 @@ pipelines:
           inputResources:
             - name: GIT_JFrog_FreeTier_JVM
           integrations:
-            - name: svenruppert_jfrog_io
+            - name: svenruppert_jfrog_io          # Change to your instance
           runtime:
             type: image
             image:
@@ -96,3 +96,19 @@ pipelines:
 #                language: java
 #                versions:
 #                  - "11"
+
+  - name: publishJavaBuild
+      type: PublishBuildInfo
+      configuration:
+        inputSteps:
+          - name: step1_pipeline_buildWithGradle
+        outputResources:
+          - name: gradleBuildInfo
+      - name: promoteJavaBuild
+        type: PromoteBuild
+        configuration:
+          targetRepository: gradle-release-local
+          inputResources:
+            - name: gradleBuildInfo
+          outputResources:
+            - name: gradleBuildInfoPromoted
