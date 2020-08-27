@@ -57,11 +57,13 @@ The BirdEyeView:
 * Maven and the HelloWorld
 * Vulnerabilities and how to visualize them
 * Pipelines Intro
+* Bonus work - choose an OpenSource Project 
+  and bring it into a fresh new FreeTier
 
 10 min: Intro check out the git repository and get the Overview about the JFrog Platform in general
 10 min: Short Navigation inside the JFrog Platform as an admin
 10 min: Generic Repos and what you could do with it
-10 min:
+10 min: 
 10 min:
 10 min:
 10 min:
@@ -91,6 +93,26 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 (DE) - 
 
 
+## create a generic repo for Jabba
+Create a generic repo called **generic-local-jabba**. 
+Upload the files from your folder **_data/_jabba-0.11.2**
+Try to download one file with **curl** and verify that it is a valid archive.
+Delete the file **install.sh** from the repo.
+Edit the file **install.sh** so that it is using your repository.
+Hint: search for **svenruppert.jfrog.io** 
+Upload this file again into your repo.
+
+(EN) -
+(DE) -
+
+## create a generic repo for Maven
+Repeat and adjust the steps from the previous section to get a 
+generic repo called **generic-local-maven**. Upload the file from the 
+folder **_data/maven**
+
+## Repo access
+Make sure that the two created repositories are accessible for the user *anonymous*.
+ 
 ## create a remote Docker Repo
 Create a remote Docker Repo called **docker-remote-dockerio** 
 with the target **https://registry-1.docker.io/** 
