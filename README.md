@@ -146,6 +146,8 @@ Try to build and push the Docker Images.
 ## create a local maven repo
 Create a local Maven Repos called **maven-local-release** and **maven-local-snapshot**
 
+The docu is here [https://www.jfrog.com/confluence/display/RTF6X/Maven+Repository](https://www.jfrog.com/confluence/display/RTF6X/Maven+Repository)
+
 (EN) -
 (DE) -
 
