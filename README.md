@@ -119,36 +119,49 @@ with the target **https://registry-1.docker.io/**
 and try to pull the image **buildpack-deps:buster-curl**
 Login into the new Docker Repo.
 
+(EN) -
+(DE) -
+
 ## create a local Docker Repo
 Create a local Docker Repo with the name **docker-local**.
 Login into the Docker Repo;
 
 ## create a virtual Docker Repo
-Create a virtual DockerRepo called **docker-virtual** and include the both created Docker repos into it.
-Define as default Deloyment Repository the local one.
-
-Login into the Docker Repo as well: **docker login svenruppert-docker-virtual.jfrog.io**
-
-
-## create a Generic Repo
-Create a generic repo and load Jabba into it
-change the Dockerfile to get this one used
-How to extract the credentials from the UI
-
-Do the same with the maven aproach
-
-
-
-
-## create a remote Maven repo
+Create a virtual DockerRepo called **docker-virtual** and include 
+the both created Docker repos into it.
+Define as default **Deployment Repository** the local one.
 
 ## create a local maven repo
+Create a local Maven Repos called **maven-local-release** and **maven-local-snapshot**
 
-## create a virtual maven and Docker repo 
+(EN) -
+(DE) -
+
+## create a remote Maven repo
+Create a remote Maven Repos called **maven-remote-mavencentral** and **maven-remote-jcenter**
+
+## create a virtual maven repo 
+Create virtual Maven Repos to aggregate the created repositories
+by **snapshot** and **release**.
+Define the default deploy repo as well.
+
+## Use the Maven repos
+Go to the file **pom.xml** and change it in the way that you are 
+using your new created virtual maven repositories. Delete your local **.m2** folder and 
+test your config with a **mvn clean verify**. 
+Maven should load all dependencies from your new repository now.
 
 ## secure your platform
+TBD -  
+
 
 ## FreeTier Maintenance
+To maintain your Platform instance it is good to know that you have the functionality
+of a TrashCan. This is good to un-delete a file. On the other side it is 
+good to clear the caches from time to time to make sure you are not hitting your limits soon.
+
+For this, check inside the Administration Menu your current Storage usage.
+Delete the TrashCan and find out how to clear the cached content from a remote Repository.
 
 
 ## IDE Plugin - Scan for Vulnerabilities
