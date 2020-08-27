@@ -131,6 +131,18 @@ Create a virtual DockerRepo called **docker-virtual** and include
 the both created Docker repos into it.
 Define as default **Deployment Repository** the local one.
 
+## Create and Push Docker Images
+After we created the Docker repositories 
+it is time to create and push a Docker Image created by ourself.
+
+### Pull an Image
+Pull the HelloWorld Image over your created virtual Docker Repository.
+After this is done, go to the folder **_data/adopt@1.8.0-172**
+Edit the Dockerfile in a way that you are using your generic repo with the Jabba Tool.
+Edit the file **build.sh** to use your Docker Repository as well.
+Try to build and push the Docker Images.
+
+
 ## create a local maven repo
 Create a local Maven Repos called **maven-local-release** and **maven-local-snapshot**
 
@@ -151,6 +163,34 @@ using your new created virtual maven repositories. Delete your local **.m2** fol
 test your config with a **mvn clean verify**. 
 Maven should load all dependencies from your new repository now.
 
+### How to use the Docker Images
+In the following examples, I assume that maven organizes the project.
+With gradle, it should be the same, but maybe different paths. 
+Change the Docker Image name to your ones.
+
+If you need a JDK only
+```bash
+docker run \
+       --rm \
+       --name run \
+       -v "$(pwd)":/usr/src/mymaven \
+       -w /usr/src/mymaven \
+       svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/adopt:1.8.0-172 \
+       java -jar target/myapp.jar
+```
+
+If you need maven and a JDK
+```bash
+docker run \
+       --rm \
+       --name compile \
+       -v "$(pwd)":/usr/src/mymaven \
+       -w /usr/src/mymaven \
+       svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/maven-3.6.3-adopt:1.8.0-172 \
+       mvn clean install -Dmaven.test.skip=true
+```
+
+
 ## secure your platform
 TBD -  
 
@@ -158,7 +198,7 @@ TBD -
 ## FreeTier Maintenance
 To maintain your Platform instance it is good to know that you have the functionality
 of a TrashCan. This is good to un-delete a file. On the other side it is 
-good to clear the caches from time to time to make sure you are not hitting your limits soon.
+good to clear the caches from time to time and make sure you are not hitting your limits soon.
 
 For this, check inside the Administration Menu your current Storage usage.
 Delete the TrashCan and find out how to clear the cached content from a remote Repository.
@@ -190,6 +230,7 @@ the official docu is here:
 Policies and Rules [https://www.jfrog.com/confluence/display/JFROG/Creating+Xray+Policies+and+Rules](https://www.jfrog.com/confluence/display/JFROG/Creating+Xray+Policies+and+Rules)
 Watches [https://www.jfrog.com/confluence/display/JFROG/Configuring+Xray+Watches](https://www.jfrog.com/confluence/display/JFROG/Configuring+Xray+Watches)
 of check out my short video:
+
 (EN) -
 (DE) -
 
@@ -201,41 +242,154 @@ and choose all maven and docker repositories we created today. After this press 
 Select the report and export it as pdf.
 The official docu is here: [https://www.jfrog.com/confluence/display/JFROG/Vulnerabilities+Report](https://www.jfrog.com/confluence/display/JFROG/Vulnerabilities+Report)
 If you are to lazy to read, try my JFrog HowTo.
+
 (EN) - 
 (DE) -
 
- 
-
-
 ## Start with Pipelines
+To start with Pipelines you need to prepare a few things.
 
+### Integrations
+Go to the Menuepoint **Applications - Pipelines - Integrations**
+Add an integration for GitHub and Artifactory.
+The Documentation is here: 
+Artifactory [https://www.jfrog.com/confluence/display/JFROG/Artifactory+Integration](https://www.jfrog.com/confluence/display/JFROG/Artifactory+Integration)
+GitHub [https://www.jfrog.com/confluence/display/JFROG/GitHub+Integration](https://www.jfrog.com/confluence/display/JFROG/GitHub+Integration)
 
+(EN) - 
+(DE) -
 
+### Create a file called mvn-art-config
+The file called **mvn-art-config** must be in the root folder of the project and 
+will be needed during the pipelines run. 
+Take the following snipp and edit it to your needs.
 
-
-
-## How to use the Docker Images
-In the following examples, I assume that maven organizes the project.
-With gradle, it should be the same, but maybe different paths.
-
-If you need a JDK only
-```bash
-docker run \
-       --rm \
-       --name run \
-       -v "$(pwd)":/usr/src/mymaven \
-       -w /usr/src/mymaven \
-       svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/adopt:1.8.0-172 \
-       java -jar target/myapp.jar
+```yaml
+version: 1
+type: maven
+resolver:
+  snapshotRepo: maven-virtual-libs-snapshot
+  releaseRepo: maven-virtual-libs-release
+  serverID: svenruppert_jfrog_io
+deployer:
+  snapshotRepo: maven-virtual-libs-snapshot
+  releaseRepo: maven-virtual-libs-release
+  serverID: svenruppert_jfrog_io
 ```
 
-If you need maven and a JDK
-```bash
-docker run \
-       --rm \
-       --name compile \
-       -v "$(pwd)":/usr/src/mymaven \
-       -w /usr/src/mymaven \
-       svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/maven-3.6.3-adopt:1.8.0-172 \
-       mvn clean install -Dmaven.test.skip=true
+### Pipeline definition
+To define a pipeline you need a file called **pipelines.yml**. 
+This file is located in the root folder of this project.
+
+### First section inside pipelines.yml
+The docu is here [https://www.jfrog.com/confluence/display/JFROG/Defining+a+Pipeline](https://www.jfrog.com/confluence/display/JFROG/Defining+a+Pipeline)
+
+(EN) - 
+(DE) -
+
+```yaml
+resources:
+  - name: GIT_JFrog_FreeTier_JVM
+    type: GitRepo
+    configuration:
+      gitProvider: github_as_svenruppert            # Change to your integration
+      path: Java-Workshops/JFrog-FreeTier-JVM       # Change to your repo
+  # Build info for the application
+  - name: build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: svenruppert_jfrog_io       # Change to your instance
+      buildName: Build_JFrog-FreeTier-JVM
+      buildNumber: 1
 ```
+
+### Maven section inside pipelines.yml
+It is time to build the maven project with pipelines. For this 
+I provide the first step to run a **mvn clean**.
+
+First, change this step so that it will fit to your environment.
+Push the changes to your repo and check 
+if the pipeline definition will be loaded and accepted.
+
+```yaml
+      - name: maven_build_clean
+        type: MvnBuild
+        configuration:
+          sourceLocation: .
+          mvnCommand: clean
+          configFileLocation: .
+          configFileName: mvn-art-config
+          inputResources:
+            - name: GIT_JFrog_FreeTier_JVM
+          outputResources:
+            - name: build_info
+          integrations:
+            - name: svenruppert_jfrog_io            # Change to your instance
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - "11"
+        execution:
+          onStart:
+            - javac -version
+            - mvn --version
+
+```
+
+If this step is running, add the next step that should invoke a **mvn test**.
+Have in mind that this step should run after the first one. 
+Have a look at the attribute **inputSteps:**
+
+If this is running well, add a section to verify the maven build **mvn verify**
+and add the functionality to push the build info.
+ 
+````yaml
+      - name: publish_maven_build_verify
+        type: PublishBuildInfo
+        configuration:
+          forceXrayScan: true
+          inputSteps:
+            - name: maven_build_verify
+          outputResources:
+            - name: build_info
+````
+
+Additionally you can invoke the maven task to create a Mutation TestCoverage with pit.
+The maven target is **mvn test pitest:mutationCoverage**. 
+
+### Docker build and push
+After you have done all this, you can start 
+to build your first Docker Image and push it into your registries. 
+
+````yaml
+      - name: docker_build_jdk
+        type: DockerBuild
+        configuration:
+          affinityGroup: group_docker_build_jdk
+          dockerFileLocation: _data/adopt@1.8.0-172
+          dockerFileName: Dockerfile
+          dockerImageName: svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/adopt  # replace with your image path and name
+            #            dockerImageTag: ${run_number}
+          dockerImageTag: 1.8.0-172
+          inputResources:
+            - name: GIT_JFrog_FreeTier_JVM
+          outputResources:
+            - name: build_info
+          integrations:
+            - name: svenruppert_jfrog_io
+````
+Do this for the jdk and after this is created for the maven Docker Image.
+
+## Conclusion
+You have now all steps in your hand to build repositories, 
+build your projects and scann for known vulnerabilities. 
+You are able to run your project inside a DevSecOps environment.
+
+Your next task is to choose a small 
+OpenSource project and try to get it running inside a fresh new FreeTier instance.
+If your are done with this, share it with the OpenSource project owner. ;-)
+
+
