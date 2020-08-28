@@ -267,8 +267,8 @@ Select the report and export it as pdf.
 The official docu is here: [https://www.jfrog.com/confluence/display/JFROG/Vulnerabilities+Report](https://www.jfrog.com/confluence/display/JFROG/Vulnerabilities+Report)
 If you are to lazy to read, try my JFrog HowTo.
 
-(EN) - 
-(DE) -
+[![JFrog HowTos - 002 - Vulnerabilities Report](http://img.youtube.com/vi/ieB1u_e4jKs/mqdefault.jpg)](http://www.youtube.com/watch?v=ieB1u_e4jKs "JFrog HowTos - 002 - Vulnerabilities Report")
+[![JFrog HowTos - 002 - Vulnerabilities Report](http://img.youtube.com/vi/0UAVl0cACPQ/mqdefault.jpg)](http://www.youtube.com/watch?v=0UAVl0cACPQ "JFrog HowTos - 002 - Vulnerabilities Report")
 
 ## Start with Pipelines
 To start with Pipelines you need to prepare a few things.
