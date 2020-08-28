@@ -73,6 +73,10 @@ The BirdEyeView:
 10 min:
 10 min:
 
+## DevOps versus DevSecOps
+What is the difference, why we are doing it.
+BirdEye View 
+
 
 ## The tutorial itself
 Lets start with the tutorial now! The plan is, to finish all steps in approx 2h.
@@ -84,13 +88,25 @@ For this tutorial you can use the JFrog Platform based on the FreeTier offer.
 This you will find under the URL [http://jfrog.com/start-free](http://jfrog.com/start-free). You do not need credit card 
 informations for this and the FreeTier itself is not limited in time. 
 If you want to see how to activate the FreeTier from JFrog, have a look at the following video on Youtube.
-(EN) - [https://www.youtube.com/watch?v=2mQe_WA8Wmw](https://www.youtube.com/watch?v=2mQe_WA8Wmw)
-(DE) - [https://www.youtube.com/watch?v=OjKbxekJhrc](https://www.youtube.com/watch?v=OjKbxekJhrc)
+
+
+
+* (EN) - [![Activate the JFrog FreeTier](http://img.youtube.com/vi/2mQe_WA8Wmw/0.jpg)](http://www.youtube.com/watch?v=2mQe_WA8Wmw "JFrog HowTos - 003 - Free Tier Activation")
+* (DE) - [![Activate the JFrog FreeTier](http://img.youtube.com/vi/OjKbxekJhrc/0.jpg)](http://www.youtube.com/watch?v=OjKbxekJhrc "JFrog HowTos - 003 - Free Tier Activation")
+
+## What is JFrog and Why we are using it
+* What are the topics we are covering
 
 
 ## Platform Overview
 (EN) -
 (DE) - 
+
+
+Finding use cases why I am doing this.
+More informations about Artifactory
+Shorter, no details. The single menue entries are explained during the tasks.
+
 
 
 ## create a generic repo for Jabba
@@ -101,6 +117,9 @@ Delete the file **install.sh** from the repo.
 Edit the file **install.sh** so that it is using your repository.
 Hint: search for **svenruppert.jfrog.io** 
 Upload this file again into your repo.
+
+Single File versus Multi File:
+Highlight the SetMeUp Button !!!
 
 (EN) -
 (DE) -
@@ -114,6 +133,9 @@ folder **_data/maven**
 Make sure that the two created repositories are accessible for the user *anonymous*.
  
 ## create a remote Docker Repo
+
+Note: just close the Overlay that says that the DNS record will be created
+
 Create a remote Docker Repo called **docker-remote-dockerio** 
 with the target **https://registry-1.docker.io/** 
 and try to pull the image **buildpack-deps:buster-curl**
@@ -212,12 +234,12 @@ The tool that we are using is Xray and integrated into the JFrog Platform.
 It is able to scan all elements that are in Artifactory. Binaries, Buildinfos and so on. 
 Your task now: Install the JFrog IDE Plugin and connect to your FreeTier installation.
 
-(EN) - [https://youtu.be/PsghzAf-ODU](https://youtu.be/PsghzAf-ODU)
-(DE) - [https://www.youtube.com/watch?v=zRzjFhR1OjQ](https://www.youtube.com/watch?v=zRzjFhR1OjQ)
+* (EN) - [https://youtu.be/PsghzAf-ODU](https://youtu.be/PsghzAf-ODU)
+* (DE) - [https://www.youtube.com/watch?v=zRzjFhR1OjQ](https://www.youtube.com/watch?v=zRzjFhR1OjQ)
 
 If you want to see it in action scanning a Vaadin webapp check out the following video.
-(EN) - [https://youtu.be/h11zwbamskA](https://youtu.be/h11zwbamskA)
-(DE) - [https://www.youtube.com/watch?v=sTXoWYzSZpI](https://www.youtube.com/watch?v=sTXoWYzSZpI)
+* (EN) - [https://youtu.be/h11zwbamskA](https://youtu.be/h11zwbamskA)
+* (DE) - [https://www.youtube.com/watch?v=sTXoWYzSZpI](https://www.youtube.com/watch?v=sTXoWYzSZpI)
 
 ## Xray - Watches
 Inside the JFrog Platform you can analyse your binaries as well.
