@@ -97,8 +97,10 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 
 
 ## Platform Overview
-(EN) -
-(DE) - 
+
+
+[![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/SCtZ097DSs8/mqdefault.jpg)](http://www.youtube.com/watch?v=SCtZ097DSs8 "JFrog HowTos - 006 - Platform Overview")
+[![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/M1PYnM7MXq4/mqdefault.jpg)](http://www.youtube.com/watch?v=M1PYnM7MXq4 "JFrog HowTos - 006 - Platform Overview")
 
 
 Finding use cases why I am doing this.
