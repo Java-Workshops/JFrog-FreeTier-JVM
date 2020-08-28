@@ -232,12 +232,14 @@ The tool that we are using is Xray and integrated into the JFrog Platform.
 It is able to scan all elements that are in Artifactory. Binaries, Buildinfos and so on. 
 Your task now: Install the JFrog IDE Plugin and connect to your FreeTier installation.
 
-* (EN) - [https://youtu.be/PsghzAf-ODU](https://youtu.be/PsghzAf-ODU)
-* (DE) - [https://www.youtube.com/watch?v=zRzjFhR1OjQ](https://www.youtube.com/watch?v=zRzjFhR1OjQ)
+
+[![JFrog HowTos - 001 - Xray IDE Plugin v1.6.2](http://img.youtube.com/vi/PsghzAf-ODU/mqdefault.jpg)](http://www.youtube.com/watch?v=PsghzAf-ODU "JFrog HowTos - 001 - Xray IDE Plugin v1.6.2")
+[![JFrog HowTos - 001 - Xray IDE Plugin v1.6.2](http://img.youtube.com/vi/zRzjFhR1OjQ/mqdefault.jpg)](http://www.youtube.com/watch?v=zRzjFhR1OjQ "JFrog HowTos - 001 - Xray IDE Plugin v1.6.2")
 
 If you want to see it in action scanning a Vaadin webapp check out the following video.
-* (EN) - [https://youtu.be/h11zwbamskA](https://youtu.be/h11zwbamskA)
-* (DE) - [https://www.youtube.com/watch?v=sTXoWYzSZpI](https://www.youtube.com/watch?v=sTXoWYzSZpI)
+
+[![Series - DevSecOps - HowTo harden Vaadin Flow](http://img.youtube.com/vi/h11zwbamskA/mqdefault.jpg)](http://www.youtube.com/watch?v=h11zwbamskA "Series - DevSecOps - HowTo harden Vaadin Flow")
+[![Series - DevSecOps - HowTo harden Vaadin Flow](http://img.youtube.com/vi/sTXoWYzSZpI/mqdefault.jpg)](http://www.youtube.com/watch?v=sTXoWYzSZpI "Series - DevSecOps - HowTo harden Vaadin Flow")
 
 ## Xray - Watches
 Inside the JFrog Platform you can analyse your binaries as well.
