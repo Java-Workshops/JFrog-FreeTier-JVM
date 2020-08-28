@@ -89,7 +89,7 @@ This you will find under the URL [http://jfrog.com/start-free](http://jfrog.com/
 informations for this and the FreeTier itself is not limited in time. 
 If you want to see how to activate the FreeTier from JFrog, have a look at the following video on Youtube.
 
-[![Activate the JFrog FreeTier](http://img.youtube.com/vi/2mQe_WA8Wmw/0.jpg)](http://www.youtube.com/watch?v=2mQe_WA8Wmw "JFrog HowTos - 003 - Free Tier Activation")
+[![Activate the JFrog FreeTier](http://img.youtube.com/vi/2mQe_WA8Wmw/0.jpg)](http://www.youtube.com/watch?v=2mQe_WA8Wmw "JFrog HowTos - 003 - Free Tier Activation"){:height="36px" width="36px"}
 [![Activate the JFrog FreeTier](http://img.youtube.com/vi/OjKbxekJhrc/0.jpg)](http://www.youtube.com/watch?v=OjKbxekJhrc "JFrog HowTos - 003 - Free Tier Activation")
 
 ## What is JFrog and Why we are using it
