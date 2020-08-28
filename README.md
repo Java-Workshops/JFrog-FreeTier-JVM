@@ -238,8 +238,8 @@ Your task now: Install the JFrog IDE Plugin and connect to your FreeTier install
 
 If you want to see it in action scanning a Vaadin webapp check out the following video.
 
-[![Series - DevSecOps - HowTo harden Vaadin Flow](http://img.youtube.com/vi/h11zwbamskA/mqdefault.jpg)](http://www.youtube.com/watch?v=h11zwbamskA "Series - DevSecOps - HowTo harden Vaadin Flow")
-[![Series - DevSecOps - HowTo harden Vaadin Flow](http://img.youtube.com/vi/sTXoWYzSZpI/mqdefault.jpg)](http://www.youtube.com/watch?v=sTXoWYzSZpI "Series - DevSecOps - HowTo harden Vaadin Flow")
+[![Series - DevSecOps - HowTo harden Vaadin Flow](http://img.youtube.com/vi/h11zwbamskA/0.jpg)](http://www.youtube.com/watch?v=h11zwbamskA "Series - DevSecOps - HowTo harden Vaadin Flow")
+[![Series - DevSecOps - HowTo harden Vaadin Flow](http://img.youtube.com/vi/sTXoWYzSZpI/0.jpg)](http://www.youtube.com/watch?v=sTXoWYzSZpI "Series - DevSecOps - HowTo harden Vaadin Flow")
 
 ## Xray - Watches
 Inside the JFrog Platform you can analyse your binaries as well.
