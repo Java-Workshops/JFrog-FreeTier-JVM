@@ -61,10 +61,10 @@ The BirdEyeView:
 (optional) * Bonus work - choose an OpenSource Project 
   and bring it into a fresh new FreeTier
 
-## DevOps versus DevSecOps
-What is the difference, why we are doing it.
-BirdEye View 
 
+## DevOps versus DevSecOps and the cloud native world
+Short intro into the basic concepts of DevSecOps and how JFrog will provide support for it.
+> slides are as pdf inside the folder **_data/**
 
 ## The tutorial itself
 Lets start with the tutorial now! The plan is, to finish all steps in approx 2h.
@@ -80,79 +80,24 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 [![Activate the JFrog FreeTier](http://img.youtube.com/vi/2mQe_WA8Wmw/mqdefault.jpg)](http://www.youtube.com/watch?v=2mQe_WA8Wmw "JFrog HowTos - 003 - Free Tier Activation")
 [![Activate the JFrog FreeTier](http://img.youtube.com/vi/OjKbxekJhrc/mqdefault.jpg)](http://www.youtube.com/watch?v=OjKbxekJhrc "JFrog HowTos - 003 - Free Tier Activation")
 
-## What is JFrog and Why we are using it
-* What are the topics we are covering
-
-
 ## Platform Overview
-
+Short overview of the 
 [![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/SCtZ097DSs8/mqdefault.jpg)](http://www.youtube.com/watch?v=SCtZ097DSs8 "JFrog HowTos - 006 - Platform Overview")
 [![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/M1PYnM7MXq4/mqdefault.jpg)](http://www.youtube.com/watch?v=M1PYnM7MXq4 "JFrog HowTos - 006 - Platform Overview")
 
 
-## create a generic repo for Jabba
-Create a generic repo called **generic-local-jabba**. 
-Upload the files from your folder **_data/_jabba-0.11.2**
-Try to download one file with **curl** and verify that it is a valid archive.
-Delete the file **install.sh** from the repo.
-Edit the file **install.sh** so that it is using your repository.
-Hint: search for **svenruppert.jfrog.io** 
-Upload this file again into your repo.
-
-Single File versus Multi File:
-Highlight the SetMeUp Button !!!
-
-(EN) -
-(DE) -
-
 ## create a generic repo for Maven
-Repeat and adjust the steps from the previous section to get a 
-generic repo called **generic-local-maven**. Upload the file from the 
-folder **_data/maven**
-
-## Repo access
-Make sure that the two created repositories are accessible for the user *anonymous*.
- 
-## create a remote Docker Repo
-
-Note: just close the Overlay that says that the DNS record will be created
-
-Create a remote Docker Repo called **docker-remote-dockerio** 
-with the target **https://registry-1.docker.io/** 
-and try to pull the image **buildpack-deps:buster-curl**
-Login into the new Docker Repo.
-
-(EN) -
-(DE) -
-
-## create a local Docker Repo
-Create a local Docker Repo with the name **docker-local**.
-Login into the Docker Repo;
-
-## create a virtual Docker Repo
-Create a virtual DockerRepo called **docker-virtual** and include 
-the both created Docker repos into it.
-Define as default **Deployment Repository** the local one.
-
-## Create and Push Docker Images
-After we created the Docker repositories 
-it is time to create and push a Docker Image created by ourself.
-
-### Pull an Image
-Pull the HelloWorld Image over your created virtual Docker Repository.
-After this is done, go to the folder **_data/adopt@1.8.0-172**
-Edit the Dockerfile in a way that you are using your generic repo with the Jabba Tool.
-Edit the file **build.sh** to use your Docker Repository as well.
-Try to build and push the Docker Images.
-
+Create a generic repo called **generic-local-maven**.
+Upload the file from your folder **_data/_maven**
+Try to download one file with **curl** and verify that it is a valid archive.
 
 ## create a local maven repo
 Create a local Maven Repos called **maven-local-release** and **maven-local-snapshot**
 
 The docu is here [https://www.jfrog.com/confluence/display/RTF6X/Maven+Repository](https://www.jfrog.com/confluence/display/RTF6X/Maven+Repository)
 
-(EN) -
-(DE) -
+(EN) - (https://youtu.be/Jja5XMLcSe0)[https://youtu.be/Jja5XMLcSe0]
+(DE) - ()[]
 
 ## create a remote Maven repo
 Create a remote Maven Repos called **maven-remote-mavencentral** and **maven-remote-jcenter**
@@ -400,3 +345,55 @@ OpenSource project and try to get it running inside a fresh new FreeTier instanc
 If your are done with this, share it with the OpenSource project owner. ;-)
 
 
+## Bonus Tasks
+
+### (Bonus) create a generic repo for Jabba
+Create a generic repo called **generic-local-jabba**. 
+Upload the files from your folder **_data/_jabba-0.11.2**
+Try to download one file with **curl** and verify that it is a valid archive.
+Delete the file **install.sh** from the repo.
+Edit the file **install.sh** so that it is using your repository.
+Hint: search for **svenruppert.jfrog.io** 
+Upload this file again into your repo.
+
+Single File versus Multi File:
+Highlight the SetMeUp Button !!!
+
+(EN) -
+(DE) -
+
+### Repo access
+Make sure that the two created repositories are accessible for the user *anonymous*.
+ 
+ 
+ ### create a remote Docker Repo
+ 
+ Note: just close the Overlay that says that the DNS record will be created
+ 
+ Create a remote Docker Repo called **docker-remote-dockerio** 
+ with the target **https://registry-1.docker.io/** 
+ and try to pull the image **buildpack-deps:buster-curl**
+ Login into the new Docker Repo.
+ 
+ (EN) -
+ (DE) -
+ 
+ ### create a local Docker Repo
+ Create a local Docker Repo with the name **docker-local**.
+ Login into the Docker Repo;
+ 
+ ### create a virtual Docker Repo
+ Create a virtual DockerRepo called **docker-virtual** and include 
+ the both created Docker repos into it.
+ Define as default **Deployment Repository** the local one.
+ 
+ ### Create and Push Docker Images
+ After we created the Docker repositories 
+ it is time to create and push a Docker Image created by ourself.
+ 
+ #### Pull an Image
+ Pull the HelloWorld Image over your created virtual Docker Repository.
+ After this is done, go to the folder **_data/adopt@1.8.0-172**
+ Edit the Dockerfile in a way that you are using your generic repo with the Jabba Tool.
+ Edit the file **build.sh** to use your Docker Repository as well.
+ Try to build and push the Docker Images.
