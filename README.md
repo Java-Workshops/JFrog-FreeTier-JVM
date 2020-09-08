@@ -87,7 +87,7 @@ Short overview of the
 
 ## create a generic repo for Maven-Binary
 Create a generic repo called **generic-local-maven**.
-Upload the file from your folder **_data/_maven**
+Upload the file from your folder **_data/_maven** [./_data/maven/apache-maven-3.6.3-bin.tar](./_data/maven/apache-maven-3.6.3-bin.tar)
 Try to download one file with **curl** and verify that it is a valid archive.
 
 ## create a local maven repo
