@@ -82,8 +82,12 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 
 ## Platform Overview
 Short overview of the 
+
 [![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/SCtZ097DSs8/mqdefault.jpg)](http://www.youtube.com/watch?v=SCtZ097DSs8 "JFrog HowTos - 006 - Platform Overview")
 [![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/M1PYnM7MXq4/mqdefault.jpg)](http://www.youtube.com/watch?v=M1PYnM7MXq4 "JFrog HowTos - 006 - Platform Overview")
+
+## QuickSetup - How to create maven repos 
+* Click on the name and select QuickSetup
 
 ## create a generic repo for Maven-Binary
 Create a generic repo called **generic-local-maven**.
@@ -111,7 +115,7 @@ Define the default deploy repo as well.
 
 ## Use the Maven repos
 Go to the file **pom.xml** and change it in the way that you are 
-using your new created virtual maven repositories. Delete your local **.m2** folder and 
+using your new created virtual maven repositories. Delete your local **.m2/repository** folder and 
 test your config with a **mvn clean verify**. 
 Maven should load all dependencies from your new repository now.
 
