@@ -115,7 +115,8 @@ Define the default deploy repo as well.
 
 ## Use the Maven repos
 Go to the file **pom.xml** and change it in the way that you are 
-using your new created virtual maven repositories. Delete your local **.m2/repository** folder and 
+using your new created virtual maven repositories. 
+Rename your local **.m2/repository** folder to a name like **repository_backup** and 
 test your config with a **mvn clean verify**. 
 Maven should load all dependencies from your new repository now.
 
