@@ -73,9 +73,9 @@ The BirdEyeView:
 10 min:
 10 min:
 
-## DevOps versus DevSecOps
-What is the difference, why we are doing it.
-BirdEye View 
+## DevOps versus DevSecOps and the cloud native world
+
+<iframe src="https://onedrive.live.com/embed?cid=3143CA933736447E&amp;resid=3143CA933736447E%21142717&amp;authkey=AHvXfVAu1hSNJX8&amp;em=2&amp;wdAr=1.7777777777777777" width="610px" height="367px" frameborder="0">Dies ist ein eingebettetes <a target="_blank" href="https://office.com">Microsoft Office</a>-Dokument, unterstützt von <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
 
 
 ## The tutorial itself
