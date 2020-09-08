@@ -46,36 +46,24 @@ Maven is used in a version higher 3.3. Please make sure you have access to it.
 You can use the bundled maven version. The archive is inside the folder **_data/maven** and contains
 the maven version 3.6.3 as tar.gz file.
 
-
 ## Timetable and Agenda
 The tutorial is planned to be done in approx 2h in total.
 
 The BirdEyeView:
 * Intro into the JFrog Platform
-* A demo how to use a generic repo
-* Docker and the first steps
+* Demo - HowTo create a generic repository
 * Maven and the HelloWorld
 * Vulnerabilities and how to visualize them
-* Pipelines Intro
-* Bonus work - choose an OpenSource Project 
+
+(optional) * A demo how to use a generic repo
+(optional) * Docker and the first steps
+(optional) * Pipelines Intro
+(optional) * Bonus work - choose an OpenSource Project 
   and bring it into a fresh new FreeTier
 
-10 min: Intro check out the git repository and get the Overview about the JFrog Platform in general
-10 min: Short Navigation inside the JFrog Platform as an admin
-10 min: Generic Repos and what you could do with it
-10 min: 
-10 min:
-10 min:
-10 min:
-10 min:
-10 min:
-10 min:
-10 min:
-10 min:
-
-## DevOps versus DevSecOps and the cloud native world
-
-<iframe src="https://onedrive.live.com/embed?cid=3143CA933736447E&amp;resid=3143CA933736447E%21142717&amp;authkey=AHvXfVAu1hSNJX8&amp;em=2&amp;wdAr=1.7777777777777777" width="610px" height="367px" frameborder="0">Dies ist ein eingebettetes <a target="_blank" href="https://office.com">Microsoft Office</a>-Dokument, unterstützt von <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+## DevOps versus DevSecOps
+What is the difference, why we are doing it.
+BirdEye View 
 
 
 ## The tutorial itself
@@ -98,15 +86,8 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 
 ## Platform Overview
 
-
 [![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/SCtZ097DSs8/mqdefault.jpg)](http://www.youtube.com/watch?v=SCtZ097DSs8 "JFrog HowTos - 006 - Platform Overview")
 [![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/M1PYnM7MXq4/mqdefault.jpg)](http://www.youtube.com/watch?v=M1PYnM7MXq4 "JFrog HowTos - 006 - Platform Overview")
-
-
-Finding use cases why I am doing this.
-More informations about Artifactory
-Shorter, no details. The single menue entries are explained during the tasks.
-
 
 
 ## create a generic repo for Jabba
