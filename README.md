@@ -102,8 +102,9 @@ Create a local Maven Repos called **maven-local-release** and **maven-local-snap
 
 The docu is here [https://www.jfrog.com/confluence/display/RTF6X/Maven+Repository](https://www.jfrog.com/confluence/display/RTF6X/Maven+Repository)
 
-(EN) - (https://youtu.be/Jja5XMLcSe0)[https://youtu.be/Jja5XMLcSe0]
-(DE) - (https://youtu.be/Fbp1HddiUrI)[https://youtu.be/Fbp1HddiUrI]
+[![JFrog HowTos - 005 - Maven Repositories](http://img.youtube.com/vi/Jja5XMLcSe0/mqdefault.jpg)](http://www.youtube.com/watch?v=Jja5XMLcSe0 "JFrog HowTos - 005 - Maven Repositories")
+[![JFrog HowTos - 005 - Maven Repositories](http://img.youtube.com/vi/Fbp1HddiUrI/mqdefault.jpg)](http://www.youtube.com/watch?v=Fbp1HddiUrI "JFrog HowTos - 005 - Maven Repositories")
+
 
 ## create a remote Maven repo
 Create a remote Maven Repos called **maven-remote-mavencentral** and **maven-remote-jcenter**
