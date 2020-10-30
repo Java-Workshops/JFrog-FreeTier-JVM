@@ -81,7 +81,7 @@ If you want to see how to activate the FreeTier from JFrog, have a look at the f
 [![Activate the JFrog FreeTier](http://img.youtube.com/vi/OjKbxekJhrc/mqdefault.jpg)](http://www.youtube.com/watch?v=OjKbxekJhrc "JFrog HowTos - 003 - Free Tier Activation")
 
 ## Platform Overview
-Short overview of the 
+Short overview of the Platform
 
 [![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/SCtZ097DSs8/mqdefault.jpg)](http://www.youtube.com/watch?v=SCtZ097DSs8 "JFrog HowTos - 006 - Platform Overview")
 [![JFrog HowTos - 006 - Platform Overview](http://img.youtube.com/vi/M1PYnM7MXq4/mqdefault.jpg)](http://www.youtube.com/watch?v=M1PYnM7MXq4 "JFrog HowTos - 006 - Platform Overview")
@@ -102,15 +102,16 @@ Create a local Maven Repos called **maven-local-release** and **maven-local-snap
 
 The docu is here [https://www.jfrog.com/confluence/display/RTF6X/Maven+Repository](https://www.jfrog.com/confluence/display/RTF6X/Maven+Repository)
 
-(EN) - (https://youtu.be/Jja5XMLcSe0)[https://youtu.be/Jja5XMLcSe0]
-(DE) - (https://youtu.be/Fbp1HddiUrI)[https://youtu.be/Fbp1HddiUrI]
+[![JFrog HowTos - Create a maven repo](http://img.youtube.com/vi/Jja5XMLcSe0/mqdefault.jpg)](http://www.youtube.com/watch?v=Jja5XMLcSe0 "JFrog HowTos - Create a Maven Repo")
+[![JFrog HowTos - Create a maven repo](http://img.youtube.com/vi/Fbp1HddiUrI/mqdefault.jpg)](http://www.youtube.com/watch?v=Fbp1HddiUrI "JFrog HowTos - Create a Maven Repo")
+
 
 ## create a remote Maven repo
 Create a remote Maven Repos called **maven-remote-mavencentral** and **maven-remote-jcenter**
 
 ## create a virtual maven repo 
 Create virtual Maven Repos to aggregate the created repositories
-by **snapshot** and **release**.
+by **maven-snapshot** and **maven-release**.
 Define the default deploy repo as well.
 
 ## Use the Maven repos
@@ -156,8 +157,15 @@ Policies and Rules [https://www.jfrog.com/confluence/display/JFROG/Creating+Xray
 Watches [https://www.jfrog.com/confluence/display/JFROG/Configuring+Xray+Watches](https://www.jfrog.com/confluence/display/JFROG/Configuring+Xray+Watches)
 of check out my short video:
 
-(EN) -
-(DE) -
+Rules and Policies 
+
+[![JFrog HowTo - Rules and Policies](http://img.youtube.com/vi/msoURDK1ruU/mqdefault.jpg)](http://www.youtube.com/watch?v=msoURDK1ruU "JFrog HowTo - Rules and Policies")
+[![JFrog HowTo - Rules and Policies](http://img.youtube.com/vi/M6u4mO6Seh0/mqdefault.jpg)](http://www.youtube.com/watch?v=M6u4mO6Seh0 "JFrog HowTo - Rules and Policies")
+
+Watches
+
+[![JFrog HowTo - Watches](http://img.youtube.com/vi/R9745buR2ZU/mqdefault.jpg)](http://www.youtube.com/watch?v=R9745buR2ZU "JFrog HowTo - Watches")
+[![JFrog HowTo - Watches](http://img.youtube.com/vi/plISaOONSb0/mqdefault.jpg)](http://www.youtube.com/watch?v=plISaOONSb0 "JFrog HowTo - Watches")
 
 
 ## AdHoc Vulnerabilities Report
@@ -261,7 +269,7 @@ docker run \
        --name compile \
        -v "$(pwd)":/usr/src/mymaven \
        -w /usr/src/mymaven \
-       svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/maven-3.6.3-adopt:1.8.0-172 \
+       svenruppert001.jfrog.io/docker/svenruppert/maven-3.6.3-adopt:1.8.0-172 \
        mvn clean install -Dmaven.test.skip=true
 ```
 

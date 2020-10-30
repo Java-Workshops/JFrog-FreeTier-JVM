@@ -9,8 +9,8 @@
 #else
     echo start building the images
     docker build -t svenruppert/maven-3.6.3-adopt .
-    docker tag svenruppert/maven-3.6.3-adopt:latest svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/maven-3.6.3-adopt:1.8.0-172
-    docker push svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/maven-3.6.3-adopt:1.8.0-172
+    docker tag svenruppert/maven-3.6.3-adopt:latest svenruppert001.jfrog.io/docker/svenruppert/maven-3.6.3-adopt:1.8.0-172
+    docker push svenruppert001.jfrog.io/docker/svenruppert/maven-3.6.3-adopt:1.8.0-172
 #fi
 #    docker image rm svenruppert/maven-3.6.1-adopt:latest
 #    docker image rm svenruppert/maven-3.6.1-adopt:1.8.0-172
