@@ -414,3 +414,31 @@ to build your first Docker Image and push it into your registries.
             - name: svenruppert_jfrog_io
 ````
 Do this for the jdk and after this is created for the maven Docker Image.
+
+## Maven Infos
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+
+
+
+  <servers>
+    <server>
+      <id>deploy-repo-maven</id>
+      <username>USERNAME</username>
+      <password>PASSWORD</password>
+    </server>
+    <server>
+      <id>deploy-repo-maven-snapshots</id>
+      <username>USERNAME</username>
+      <password>PASSWORD</password>
+    </server>
+  </servers>
+
+
+</settings>
+```
