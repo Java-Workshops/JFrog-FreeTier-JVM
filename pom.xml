@@ -53,14 +53,18 @@
   </licenses>
 
   <properties>
-<!--    <jfrog.artifactory.url>https://svenruppert.jfrog.io/artifactory/</jfrog.artifactory.url>-->
-    <jfrog.artifactory.url>https://svenruppert001.jfrog.io/artifactory/</jfrog.artifactory.url>
+<!--    <jfrog.artifactory.url>https://linkedin001.jfrog.io/artifactory/</jfrog.artifactory.url>-->
+<!--    <repo-release>${jfrog.artifactory.url}maven-release/</repo-release>-->
+<!--    <repo-snapshot>${jfrog.artifactory.url}maven-snapshot/</repo-snapshot>-->
+<!--    <deploy-repo-url>${jfrog.artifactory.url}maven-release/</deploy-repo-url>-->
+<!--    <deploy-repo-snapshots-url>${jfrog.artifactory.url}maven-snapshot/</deploy-repo-snapshots-url>-->
 
-    <repo-release>${jfrog.artifactory.url}maven-release/</repo-release>
-    <repo-snapshot>${jfrog.artifactory.url}maven-snapshot/</repo-snapshot>
+    <repo-release>https://workshop20201215.jfrog.io/artifactory/maven-release/</repo-release>
+    <repo-snapshot>https://workshop20201215.jfrog.io/artifactory/maven-snapshot/</repo-snapshot>
+    <deploy-repo-url>https://workshop20201215.jfrog.io/artifactory/maven-release/</deploy-repo-url>
+    <deploy-repo-snapshots-url>https://workshop20201215.jfrog.io/artifactory/maven-snapshot/</deploy-repo-snapshots-url>
 
-    <deploy-repo-url>${jfrog.artifactory.url}maven-release/</deploy-repo-url>
-    <deploy-repo-snapshots-url>${jfrog.artifactory.url}maven-snapshot/</deploy-repo-snapshots-url>
+
 
     <jdk.version>1.8</jdk.version>
     <!--technical-->
@@ -86,13 +90,6 @@
     <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
     <pitest-prod-classes>org.rapidpm.*</pitest-prod-classes>
     <pitest-test-classes>junit.org.rapidpm*</pitest-test-classes>
-
-    <!--    <artifactory-maven-plugin.contextUrl>http://svenr.jfrog.io</artifactory-maven-plugin.contextUrl>-->
-    <!--&lt;!&ndash;    <artifactory-maven-plugin.username>username</artifactory-maven-plugin.username>&ndash;&gt;-->
-    <!--&lt;!&ndash;    <artifactory-maven-plugin.password>password</artifactory-maven-plugin.password>&ndash;&gt;-->
-    <!--    <artifactory-maven-plugin.buildNumber>buildnumber</artifactory-maven-plugin.buildNumber>-->
-    <!--    <artifactory-maven-plugin.buildUrl>build-url</artifactory-maven-plugin.buildUrl>-->
-    <!--    <artifactory-maven-plugin.violationRecipients>build@organisation.com</artifactory-maven-plugin.violationRecipients>-->
 
   </properties>
 
@@ -160,17 +157,10 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.codehaus.groovy</groupId>
-      <artifactId>groovy-all</artifactId>
-      <version>2.4.18</version>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin</artifactId>
+      <version>17.0.9</version>
     </dependency>
-
-
-
-
-
-
-
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
@@ -407,7 +397,6 @@
       </build>
     </profile>
   </profiles>
-
 
   <reporting>
     <plugins>
