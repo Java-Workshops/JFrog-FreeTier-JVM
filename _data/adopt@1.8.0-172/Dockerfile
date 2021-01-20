@@ -1,4 +1,4 @@
-FROM svenruppert001.jfrog.io/docker/buildpack-deps:buster-curl
+FROM javahow.jfrog.io/docker/buildpack-deps:buster-curl
 LABEL maintainer="Sven Ruppert sven.ruppert@gmail.com" description="adopt@1.8.0-172"
 
 ARG USER_HOME_DIR="/root"
@@ -12,7 +12,7 @@ ENV JABBA_REPO https://github.com/shyiko/jabba/raw/master
 #        JABBA_COMMAND="install adopt@1.8.0-172 -o /jdk" bash
 
 RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | \
-    JABBA_COMMAND="install adopt@1.8.0-172 -o /jdk" bash
+    JABBA_COMMAND="install adopt@1.8.0-272 -o /jdk" bash
 
 ENV JAVA_HOME /jdk
 ENV PATH $JAVA_HOME/bin:$PATH

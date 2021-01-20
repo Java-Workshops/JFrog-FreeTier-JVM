@@ -53,16 +53,16 @@
   </licenses>
 
   <properties>
-<!--    <jfrog.artifactory.url>https://linkedin001.jfrog.io/artifactory/</jfrog.artifactory.url>-->
-<!--    <repo-release>${jfrog.artifactory.url}maven-release/</repo-release>-->
-<!--    <repo-snapshot>${jfrog.artifactory.url}maven-snapshot/</repo-snapshot>-->
-<!--    <deploy-repo-url>${jfrog.artifactory.url}maven-release/</deploy-repo-url>-->
-<!--    <deploy-repo-snapshots-url>${jfrog.artifactory.url}maven-snapshot/</deploy-repo-snapshots-url>-->
+    <jfrog.artifactory.url>https://javahow.jfrog.io/artifactory/</jfrog.artifactory.url>
+    <repo-release>${jfrog.artifactory.url}maven-release/</repo-release>
+    <repo-snapshot>${jfrog.artifactory.url}maven-snapshot/</repo-snapshot>
+    <deploy-repo-url>${jfrog.artifactory.url}maven-release/</deploy-repo-url>
+    <deploy-repo-snapshots-url>${jfrog.artifactory.url}maven-snapshot/</deploy-repo-snapshots-url>
 
-    <repo-release>https://workshop20201215.jfrog.io/artifactory/maven-release/</repo-release>
-    <repo-snapshot>https://workshop20201215.jfrog.io/artifactory/maven-snapshot/</repo-snapshot>
-    <deploy-repo-url>https://workshop20201215.jfrog.io/artifactory/maven-release/</deploy-repo-url>
-    <deploy-repo-snapshots-url>https://workshop20201215.jfrog.io/artifactory/maven-snapshot/</deploy-repo-snapshots-url>
+<!--    <repo-release>https://javahow.jfrog.io/artifactory/maven-release/</repo-release>-->
+<!--    <repo-snapshot>hhttps://javahow.jfrog.io/artifactory/maven-snapshot/</repo-snapshot>-->
+<!--    <deploy-repo-url>hhttps://javahow.jfrog.io/artifactory/maven-release/</deploy-repo-url>-->
+<!--    <deploy-repo-snapshots-url>https://javahow.jfrog.io/artifactory/maven-snapshot/</deploy-repo-snapshots-url>-->
 
 
 
@@ -83,7 +83,7 @@
     <!--TDD jUnit5-->
     <junit.jupiter.version>5.7.0-RC1</junit.jupiter.version>
     <junit.platform.version>1.7.0-RC1</junit.platform.version>
-    <junit-platform-maven-plugin.version>1.1.0</junit-platform-maven-plugin.version>
+    <junit-platform-maven-plugin.version>1.1.1</junit-platform-maven-plugin.version>
 
     <jacoco.version>0.8.5</jacoco.version>
     <pitest.version>1.5.2</pitest.version>
@@ -144,7 +144,6 @@
       <url>${repo-snapshot}</url>
     </pluginRepository>
   </pluginRepositories>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -161,6 +160,7 @@
       <artifactId>vaadin</artifactId>
       <version>17.0.9</version>
     </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
@@ -238,15 +238,8 @@
             </dependency>
           </dependencies>
         </plugin>
-        <!--    JFrog-->
-        <plugin>
-          <groupId>org.jfrog.buildinfo</groupId>
-          <artifactId>artifactory-maven-plugin</artifactId>
-          <version>2.6.1</version>
-        </plugin>
       </plugins>
     </pluginManagement>
-
 
     <plugins>
       <plugin>

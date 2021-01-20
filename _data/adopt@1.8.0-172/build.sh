@@ -10,8 +10,8 @@
     echo start building the image
     docker build -t svenruppert/adopt .
 
-    docker tag svenruppert/adopt:latest svenruppert001.jfrog.io/docker/svenruppert/adopt:1.8.0-172
-    docker push svenruppert001.jfrog.io/docker/svenruppert/adopt:1.8.0-172
+    docker tag svenruppert/adopt:latest javahow.jfrog.io/docker/svenruppert/adopt:1.8.0-272
+    docker push javahowjabba .jfrog.io/docker/svenruppert/adopt:1.8.0-272
 
 #fi
 #    docker image rm svenruppert/adopt:latest

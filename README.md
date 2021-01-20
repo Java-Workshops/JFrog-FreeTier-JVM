@@ -23,6 +23,30 @@ We will set up repositories as well as carry out the first security scans.
 The workshop is rounded off with the use of pipelines 
 to provide your project with a simple CI pipeline.
 
+## Who is Sven?
+Sven Ruppert has been coding Java since 1996 in industrial projects and is working as Developer Advocate for JFrog. 
+He is Oracle Developer Champion, regularly speaking at Conferences worldwide and contributes to IT periodicals, as well as tech portals.
+
+Over 15 years he was working as a consultant worldwide 
+in industries like Automotive, Space, Insurance, Banking, UN and WorldBank 
+he still enjoying his main topic DevSecOps, Mutation Testing of Web apps 
+and Distributed UnitTesting besides his evergreen topics Core Java and Kotlin.
+
+Since we are all a bit more home, I started with my Youtube channels
+and combined my hobby bushcrafting with my work.
+The result are Outdoor-style IT Videos ;-)
+I really would appreciate to have YOU as my new subscriber!
+
+Youtube Channel - Outdoor Nerd - English
+[![Youtube Channel English](https://yt3.ggpht.com/ytc/AAUvwniR1nyALB7XJIAL49WrhFCMjf39ALwQiAbUoOF1=s176-c-k-c0x00ffffff-no-rj)](https://bit.ly/Outdoor-Nerd "Youtube Channel - Outdoor Nerd")
+Youtube Channel - Sven Ruppert - German
+[![Youtube Channel German](https://yt3.ggpht.com/ytc/AAUvwnikcyASO4g2KHeCbCouznJ7oxIdBfUimaAVOC3CGFc=s176-c-k-c0x00ffffff-no-rj)](https://www.youtube.com/user/svenruppert "Youtube Channel - Sven Ruppert")
+
+And if you just want to see some nature short videos, without IT..
+Check out my private channel.
+
+[![Youtube Channel German](https://yt3.ggpht.com/ytc/AAUvwnhZCtF1ebTwYW849Uu3l8VdQj62T_eaLsRJy6w2uA=s176-c-k-c0x00ffffff-no-rj)](https://www.youtube.com/channel/UCwFH8F7TNzY5Qi2K98ddNgw "Youtube Channel - Sven Ruppert private")
+
 ## Requirements on your side
 
 ### The IDE
@@ -64,7 +88,14 @@ The BirdEyeView:
 
 ## DevOps versus DevSecOps and the cloud native world
 Short intro into the basic concepts of DevSecOps and how JFrog will provide support for it.
-> slides are as pdf inside the folder **_data/**
+If you want to get more informations checkout my Youtube channel
+
+For example the Video about the **low hanging fruits of DevSecOps**
+english version
+[![Low hanging Fruits of DevSecOps - english](http://img.youtube.com/vi/lNqADishl8w/mqdefault.jpg)](https://youtu.be/lNqADishl8w "DevSecOps - What are the Low hanging Fruits? - english - 4k")
+
+german version
+[![Low hanging Fruits of DevSecOps - german](http://img.youtube.com/vi/cgaiBwRjtSk/mqdefault.jpg)](https://youtu.be/cgaiBwRjtSk "DevSecOps - What are the Low hanging Fruits? - german - 4k")
 
 ## The tutorial itself
 Lets start with the tutorial now! The plan is, to finish all steps in approx 2h.
@@ -73,8 +104,8 @@ additional links to videos to provide additional informations.
 
 ### Access to the JFrog Platform
 For this tutorial you can use the JFrog Platform based on the FreeTier offer.
-This you will find under the URL [http://jfrog.com/start-free](http://jfrog.com/start-free). You do not need credit card 
-informations for this and the FreeTier itself is not limited in time. 
+This you will find under the URL [http://bit.ly/NYJavaSIG_DevOpsTools](http://bit.ly/NYJavaSIG_DevOpsTools). 
+You do not need credit card informations for this and the FreeTier itself is not limited in time. 
 If you want to see how to activate the FreeTier from JFrog, have a look at the following video on Youtube.
 
 [![Activate the JFrog FreeTier](http://img.youtube.com/vi/2mQe_WA8Wmw/mqdefault.jpg)](http://www.youtube.com/watch?v=2mQe_WA8Wmw "JFrog HowTos - 003 - Free Tier Activation")
@@ -188,9 +219,6 @@ You are able to run your project inside a DevSecOps environment.
 Your next task is to choose a small 
 OpenSource project and try to get it running inside a fresh new FreeTier instance.
 If your are done with this, share it with the OpenSource project owner. ;-)
-
-
-
 
 
 # Bonus Tasks
