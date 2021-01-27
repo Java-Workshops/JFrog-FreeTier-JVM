@@ -11,7 +11,7 @@
     docker build -t svenruppert/adopt .
 
     docker tag svenruppert/adopt:latest javahow.jfrog.io/docker/svenruppert/adopt:1.8.0-272
-    docker push javahowjabba .jfrog.io/docker/svenruppert/adopt:1.8.0-272
+    docker push javahow.jfrog.io/docker/svenruppert/adopt:1.8.0-272
 
 #fi
 #    docker image rm svenruppert/adopt:latest

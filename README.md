@@ -104,7 +104,7 @@ additional links to videos to provide additional informations.
 
 ### Access to the JFrog Platform
 For this tutorial you can use the JFrog Platform based on the FreeTier offer.
-This you will find under the URL [http://bit.ly/NYJavaSIG_DevOpsTools](http://bit.ly/NYJavaSIG_DevOpsTools). 
+This you will find under the URL [http://bit.ly/Free_DevOps_Tools_Sven_01_2021](http://bit.ly/Free_DevOps_Tools_Sven_01_2021). 
 You do not need credit card informations for this and the FreeTier itself is not limited in time. 
 If you want to see how to activate the FreeTier from JFrog, have a look at the following video on Youtube.
 
@@ -286,7 +286,7 @@ docker run \
        --name run \
        -v "$(pwd)":/usr/src/mymaven \
        -w /usr/src/mymaven \
-       svenruppert-docker-local-svenruppert.jfrog.io/svenruppert/adopt:1.8.0-172 \
+       sjavahow.jfrog.io/svenruppert/adopt:1.8.0-272 \
        java -jar target/myapp.jar
 ```
 
