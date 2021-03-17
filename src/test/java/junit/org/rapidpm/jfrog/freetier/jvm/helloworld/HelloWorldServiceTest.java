@@ -10,7 +10,7 @@ class HelloWorldServiceTest {
 
   @Test
   void toUpperCase() {
-    String result = new HelloWorldService().toUpperCase("hello world");
-    Assertions.assertEquals("HELLO WORLD", result);
+    String result = new HelloWorldService().toUpperCase("svenruppert.com");
+    Assertions.assertEquals("SVENRUPPERT.COM", result);
   }
 }

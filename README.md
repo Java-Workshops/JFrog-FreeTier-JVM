@@ -39,12 +39,11 @@ I really would appreciate to have YOU as my new subscriber!
 
 Youtube Channel - Outdoor Nerd - English
 [![Youtube Channel English](https://yt3.ggpht.com/ytc/AAUvwniR1nyALB7XJIAL49WrhFCMjf39ALwQiAbUoOF1=s176-c-k-c0x00ffffff-no-rj)](https://bit.ly/Outdoor-Nerd "Youtube Channel - Outdoor Nerd")
+
 Youtube Channel - Sven Ruppert - German
 [![Youtube Channel German](https://yt3.ggpht.com/ytc/AAUvwnikcyASO4g2KHeCbCouznJ7oxIdBfUimaAVOC3CGFc=s176-c-k-c0x00ffffff-no-rj)](https://www.youtube.com/user/svenruppert "Youtube Channel - Sven Ruppert")
 
-And if you just want to see some nature short videos, without IT..
-Check out my private channel.
-
+Youtube Channel - Sven Ruppert - Outdoor
 [![Youtube Channel German](https://yt3.ggpht.com/ytc/AAUvwnhZCtF1ebTwYW849Uu3l8VdQj62T_eaLsRJy6w2uA=s176-c-k-c0x00ffffff-no-rj)](https://www.youtube.com/channel/UCwFH8F7TNzY5Qi2K98ddNgw "Youtube Channel - Sven Ruppert private")
 
 ## Requirements on your side
@@ -90,11 +89,13 @@ The BirdEyeView:
 Short intro into the basic concepts of DevSecOps and how JFrog will provide support for it.
 If you want to get more informations checkout my Youtube channel
 
-For example the Video about the **low hanging fruits of DevSecOps**
-english version
+For example the Video about the
+**Low Hanging Fruits Of DevSecOps**
+
+EN version -
 [![Low hanging Fruits of DevSecOps - english](http://img.youtube.com/vi/lNqADishl8w/mqdefault.jpg)](https://youtu.be/lNqADishl8w "DevSecOps - What are the Low hanging Fruits? - english - 4k")
 
-german version
+DE version - 
 [![Low hanging Fruits of DevSecOps - german](http://img.youtube.com/vi/cgaiBwRjtSk/mqdefault.jpg)](https://youtu.be/cgaiBwRjtSk "DevSecOps - What are the Low hanging Fruits? - german - 4k")
 
 ## The tutorial itself
@@ -104,7 +105,7 @@ additional links to videos to provide additional informations.
 
 ### Access to the JFrog Platform
 For this tutorial you can use the JFrog Platform based on the FreeTier offer.
-This you will find under the URL [http://bit.ly/FreeDevOps_SG1](http://bit.ly/FreeDevOps_SG1). 
+This you will find under the URL [http://jfrog.co/FreeDevOpsToolsSR4](http://jfrog.co/FreeDevOpsToolsSR4). 
 You do not need credit card informations for this and the FreeTier itself is not limited in time. 
 If you want to see how to activate the FreeTier from JFrog, have a look at the following video on Youtube.
 
