@@ -53,7 +53,7 @@
   </licenses>
 
   <properties>
-    <jfrog.artifactory.url>https://svenruppert002.jfrog.io/artifactory/</jfrog.artifactory.url>
+    <jfrog.artifactory.url>https://svenruppert202105.jfrog.io/artifactory/</jfrog.artifactory.url>
     <repo-release>${jfrog.artifactory.url}maven-release/</repo-release>
     <repo-snapshot>${jfrog.artifactory.url}maven-snapshot/</repo-snapshot>
     <deploy-repo-url>${jfrog.artifactory.url}maven-release/</deploy-repo-url>
@@ -160,6 +160,7 @@
       <artifactId>vaadin</artifactId>
       <version>17.0.9</version>
     </dependency>
+
 
     <dependency>
       <groupId>org.junit.jupiter</groupId>
