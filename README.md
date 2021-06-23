@@ -180,6 +180,11 @@ If you want to see it in action scanning a Vaadin webapp check out the following
 [![Series - DevSecOps - HowTo harden Vaadin Flow](http://img.youtube.com/vi/h11zwbamskA/mqdefault.jpg)](http://www.youtube.com/watch?v=h11zwbamskA "Series - DevSecOps - HowTo harden Vaadin Flow")
 [![Series - DevSecOps - HowTo harden Vaadin Flow](http://img.youtube.com/vi/sTXoWYzSZpI/mqdefault.jpg)](http://www.youtube.com/watch?v=sTXoWYzSZpI "Series - DevSecOps - HowTo harden Vaadin Flow")
 
+## Xray Short Intro
+If you want to have a short introduction into JFrog Xray,
+check out this Youtube video.
+[![Series - Jfrog HowTos - HowTo start with Xray](http://img.youtube.com/vi/yfoBmuaRkGI/mqdefault.jpg)](http://www.youtube.com/watch?v=yfoBmuaRkGI "Series - JFrog HowTos - Xray Short Intro")
+
 ## Xray - Watches
 Inside the JFrog Platform you can analyse your binaries as well.
 For this you need to create Rules, Policies and Watches.
