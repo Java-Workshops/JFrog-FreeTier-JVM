@@ -1,4 +1,4 @@
-FROM javahow.jfrog.io/docker/buildpack-deps:buster-curl
+FROM  devsecops202107.jfrog.io/docker/buildpack-deps:buster-curl
 LABEL maintainer="Sven Ruppert sven.ruppert@gmail.com" description="adopt@1.8.0-172"
 
 ARG USER_HOME_DIR="/root"

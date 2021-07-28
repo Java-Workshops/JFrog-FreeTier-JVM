@@ -10,7 +10,7 @@ JFrog offers you just the right tools for this.
 You can get access to the JFrog Platform and use it freely. 
 Artifactory, Xray, pipelines and more and this means that a 
 complete DevSecOps environment is at your disposal.
-
+@
 In this workshop, I will show you the individual components 
 step by step and help you set them up for your project. 
 This workshop is divided into several parts, 
