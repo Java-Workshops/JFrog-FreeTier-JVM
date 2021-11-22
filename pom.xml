@@ -53,7 +53,7 @@
   </licenses>
 
   <properties>
-    <jfrog.artifactory.url>https://devsecops202107.jfrog.io/artifactory/</jfrog.artifactory.url>
+    <jfrog.artifactory.url>https://svenr.jfrog.io/artifactory/</jfrog.artifactory.url>
     <repo-release>${jfrog.artifactory.url}maven-release/</repo-release>
     <repo-snapshot>${jfrog.artifactory.url}maven-snapshot/</repo-snapshot>
     <deploy-repo-url>${jfrog.artifactory.url}maven-release/</deploy-repo-url>
