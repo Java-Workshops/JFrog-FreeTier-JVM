@@ -1,0 +1,8 @@
+deb [trusted=yes] https://svenr.jfrog.io/artifactory/debian bullseye main contrib non-free
+#deb-src [trusted=yes] https://svenr.jfrog.io/artifactory/debian bullseye main contrib non-free
+
+deb [trusted=yes] https://svenr.jfrog.io/artifactory/debian-security/ bullseye-security main contrib non-free
+#deb-src [trusted=yes] https://svenr.jfrog.io/artifactory/debian-security/ bullseye-security main contrib non-free
+
+deb [trusted=yes] https://svenr.jfrog.io/artifactory/debian bullseye-updates main contrib non-free
+#deb-src [trusted=yes] https://svenr.jfrog.io/artifactory/debian bullseye-updates main contrib non-free

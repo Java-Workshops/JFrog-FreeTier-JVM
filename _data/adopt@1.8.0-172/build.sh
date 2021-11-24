@@ -8,10 +8,13 @@
 #    echo skip building, image already existing - svenruppert/adopt:1.8.0-172
 #else
     echo start building the image
+    export DOCKER_BUILDKIT=0
+    export COMPOSE_DOCKER_CLI_BUILD=0
+
     docker build -t svenruppert/adopt .
 
-    docker tag svenruppert/adopt:latest javahow.jfrog.io/docker/svenruppert/adopt:1.8.0-272
-    docker push javahow.jfrog.io/docker/svenruppert/adopt:1.8.0-272
+    docker tag svenruppert/adopt:latest svenr-docker.jfrog.io/docker/svenruppert/adopt:1.8.0-272
+    docker push svenr-docker.jfrog.io/docker/svenruppert/adopt:1.8.0-272
 
 #fi
 #    docker image rm svenruppert/adopt:latest

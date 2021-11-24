@@ -222,6 +222,23 @@ If you are to lazy to read, try my JFrog HowTo.
 [![JFrog HowTos - 002 - Vulnerabilities Report](http://img.youtube.com/vi/0UAVl0cACPQ/mqdefault.jpg)](http://www.youtube.com/watch?v=0UAVl0cACPQ "JFrog HowTos - 002 - Vulnerabilities Report")
 
 
+## Build-Info - !TBD!
+
+[![JFrog HowTos - Build Info - EN](http://img.youtube.com/vi/NFcjrJlxX-s/mqdefault.jpg)](http://www.youtube.com/watch?v=NFcjrJlxX-s "JFrog HowTos - Build Info - EN")
+[![JFrog HowTos - Build Info - DE](http://img.youtube.com/vi/EPSvFqVSWGY/mqdefault.jpg)](http://www.youtube.com/watch?v=EPSvFqVSWGY "JFrog HowTos - Build Info - DE")
+
+
+
+Install the JFrog CLI: http://jfrog.com/getcli
+
+jfrog config add
+jfrog config show
+jfrog rt mvn-config
+jfrog rt mvn clean install --build-name jvm-freetier-workshop --build-number 001
+jfrog rt bp jvm-freetier-workshop 001
+
+
+
 ## Conclusion
 You have now all steps in your hand to build repositories, 
 build your projects and scann for known vulnerabilities. 
