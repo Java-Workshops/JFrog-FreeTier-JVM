@@ -10,7 +10,7 @@ JFrog offers you just the right tools for this.
 You can get access to the JFrog Platform and use it freely. 
 Artifactory, Xray, pipelines and more and this means that a 
 complete DevSecOps environment is at your disposal.
-@
+
 In this workshop, I will show you the individual components 
 step by step and help you set them up for your project. 
 This workshop is divided into several parts, 
@@ -314,7 +314,7 @@ docker run \
        --name run \
        -v "$(pwd)":/usr/src/mymaven \
        -w /usr/src/mymaven \
-       sjavahow.jfrog.io/svenruppert/adopt:1.8.0-272 \
+       svenr.jfrog.io/svenruppert/adopt:1.8.0-272 \
        java -jar target/myapp.jar
 ```
 
@@ -325,7 +325,7 @@ docker run \
        --name compile \
        -v "$(pwd)":/usr/src/mymaven \
        -w /usr/src/mymaven \
-       svenruppert001.jfrog.io/docker/svenruppert/maven-3.6.3-adopt:1.8.0-172 \
+       svenr.jfrog.io/docker/svenruppert/maven-3.6.3-adopt:1.8.0-172 \
        mvn clean install -Dmaven.test.skip=true
 ```
 
