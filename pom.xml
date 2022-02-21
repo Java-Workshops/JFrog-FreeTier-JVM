@@ -8,7 +8,7 @@
   <parent>
     <groupId>io.helidon.applications</groupId>
     <artifactId>helidon-se</artifactId>
-    <version>2.4.0</version>
+    <version>2.4.1</version>
     <relativePath/>
   </parent>
 
@@ -62,14 +62,6 @@
   <properties>
     <mainClass>io.helidon.examples.quickstart.se.Main</mainClass>
 
-    <jfrog.artifactory.url>https://svenr.jfrog.io/artifactory/</jfrog.artifactory.url>
-<!--    <jfrog.artifactory.url>https://devsecops202107.jfrog.io/artifactory/</jfrog.artifactory.url>-->
-    <repo-release>${jfrog.artifactory.url}maven-release/</repo-release>
-    <repo-snapshot>${jfrog.artifactory.url}maven-snapshot/</repo-snapshot>
-    <deploy-repo-url>${jfrog.artifactory.url}maven-release/</deploy-repo-url>
-    <deploy-repo-snapshots-url>${jfrog.artifactory.url}maven-snapshot/</deploy-repo-snapshots-url>
-
-
     <jdk.version>11</jdk.version>
     <!--technical-->
     <maven.compiler.release>${jdk.version}</maven.compiler.release> <!--release makes source and target-->
@@ -96,12 +88,12 @@
     <repository>
       <id>deploy-repo-maven</id>
       <name>deploy-repo-maven</name>
-      <url>${deploy-repo-url}</url>
+      <url>https://svenr.jfrog.io/artifactory/maven-release/</url>
     </repository>
     <snapshotRepository>
       <id>deploy-repo-maven-snapshots</id>
       <name>deploy-repo-maven-snapshots</name>
-      <url>${deploy-repo-snapshots-url}</url>
+      <url>https://svenr.jfrog.io/artifactory/maven-snapshot/</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -112,7 +104,7 @@
       </snapshots>
       <id>central</id>
       <name>libs-release</name>
-      <url>${repo-release}</url>
+      <url>https://svenr.jfrog.io/artifactory/maven-release/</url>
     </repository>
     <repository>
       <snapshots>
@@ -121,7 +113,7 @@
       </snapshots>
       <id>snapshots</id>
       <name>libs-snapshot</name>
-      <url>${repo-snapshot}</url>
+      <url>https://svenr.jfrog.io/artifactory/maven-snapshot/</url>
     </repository>
     <repository>
       <id>maven_central</id>
@@ -136,7 +128,7 @@
       </snapshots>
       <id>central</id>
       <name>libs-release</name>
-      <url>${repo-release}</url>
+      <url>https://svenr.jfrog.io/artifactory/maven-release/</url>
     </pluginRepository>
     <pluginRepository>
       <snapshots>
@@ -145,7 +137,7 @@
       </snapshots>
       <id>snapshots</id>
       <name>libs-snapshot</name>
-      <url>${repo-snapshot}</url>
+      <url>https://svenr.jfrog.io/artifactory/maven-snapshot/</url>
     </pluginRepository>
   </pluginRepositories>
 
@@ -153,18 +145,6 @@
    <dependency>
      <groupId>io.helidon.bundles</groupId>
      <artifactId>helidon-bundles-webserver</artifactId>
-     <exclusions>
-       <exclusion>
-         <groupId>io.netty</groupId>
-         <artifactId>netty-codec</artifactId>
-       </exclusion>
-     </exclusions>
-   </dependency>
-
-   <dependency>
-     <groupId>io.netty</groupId>
-     <artifactId>netty-codec</artifactId>
-     <version>4.1.70.Final</version>
    </dependency>
    <dependency>
      <groupId>io.helidon.config</groupId>
@@ -190,21 +170,26 @@
    <dependency>
      <groupId>io.helidon.webclient</groupId>
      <artifactId>helidon-webclient</artifactId>
-     <exclusions>
-       <exclusion>
-         <groupId>io.netty</groupId>
-         <artifactId>netty-codec</artifactId>
-       </exclusion>
-     </exclusions>
+<!--     <exclusions>-->
+<!--       <exclusion>-->
+<!--         <groupId>io.netty</groupId>-->
+<!--         <artifactId>netty-codec</artifactId>-->
+<!--       </exclusion>-->
+<!--     </exclusions>-->
    </dependency>
+
+<!--   <dependency>-->
+<!--     <groupId>io.netty</groupId>-->
+<!--     <artifactId>netty-codec-http</artifactId>-->
+<!--&lt;!&ndash;     <version>4.1.68.Final</version>&ndash;&gt;-->
+<!--     <version>4.1.71.Final</version>-->
+<!--   </dependency>-->
+
    <dependency>
      <groupId>io.helidon.integrations.microstream</groupId>
      <artifactId>helidon-integrations-microstream</artifactId>
    </dependency>
  </dependencies>
-
-
-
   <build>
     <plugins>
       <plugin>
@@ -225,10 +210,6 @@
           </execution>
         </executions>
       </plugin>
-
-
-
-
       <!--Enable mutation testing-->
       <plugin>
         <groupId>org.pitest</groupId>
@@ -259,9 +240,6 @@
 
     </plugins>
   </build>
-
-
-
   <reporting>
     <plugins>
       <plugin>
