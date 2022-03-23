@@ -145,6 +145,12 @@
    <dependency>
      <groupId>io.helidon.bundles</groupId>
      <artifactId>helidon-bundles-webserver</artifactId>
+     <exclusions>
+       <exclusion>
+         <groupId>io.netty</groupId>
+         <artifactId>netty-codec</artifactId>
+       </exclusion>
+     </exclusions>
    </dependency>
    <dependency>
      <groupId>io.helidon.config</groupId>
@@ -170,15 +176,19 @@
    <dependency>
      <groupId>io.helidon.webclient</groupId>
      <artifactId>helidon-webclient</artifactId>
-<!--     <exclusions>-->
-<!--       <exclusion>-->
-<!--         <groupId>io.netty</groupId>-->
-<!--         <artifactId>netty-codec</artifactId>-->
-<!--       </exclusion>-->
-<!--     </exclusions>-->
+     <exclusions>
+       <exclusion>
+         <groupId>io.netty</groupId>
+         <artifactId>netty-codec</artifactId>
+       </exclusion>
+     </exclusions>
    </dependency>
 
-
+   <dependency>
+     <groupId>io.netty</groupId>
+     <artifactId>netty-codec</artifactId>
+     <version>4.1.68.Final</version>
+   </dependency>
 
    <dependency>
      <groupId>io.helidon.integrations.microstream</groupId>

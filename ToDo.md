@@ -20,8 +20,8 @@ jfrog config show
 jfrog rt mvn-config
 jfrog audit-mvn
 
-jfrog mvn clean verify -f pom.xml --build-name=20220323-workshop --build-number=20220323-001
-jfrog rt bp 20220323-workshop 20220323-001
+jfrog mvn clean verify -f pom.xml --build-name=20220323-workshop --build-number=20220323-002
+jfrog rt bp 20220323-workshop 20220323-002
 
 jfrog s target/helidon-quickstart-se.jar
 
@@ -63,7 +63,6 @@ HowTo - JFrog CLI - https://www.youtube.com/watch?v=NFcjrJlxX-s
 HowTo - Maven Repos - https://www.youtube.com/watch?v=Jja5XMLcSe0
 
 Mutation Testing - https://www.youtube.com/watch?v=6Vej7YEOF8g
-
 
 
 
