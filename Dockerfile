@@ -1,6 +1,7 @@
 
 # 1st stage, build the app
 FROM svenr-docker.jfrog.io/maven:3.6-jdk-11 as build
+#FROM devsecops20220727.jfrog.io/maven:3.6-jdk-11 as build
 
 WORKDIR /helidon
 
@@ -19,6 +20,7 @@ RUN echo "done!"
 
 # 2nd stage, build the runtime image
 FROM svenr-docker.jfrog.io/openjdk:11-jre-slim
+#FROM devsecops20220727.jfrog.io/openjdk:11-jre-slim
 WORKDIR /helidon
 
 # Copy the binary built in the 1st stage
