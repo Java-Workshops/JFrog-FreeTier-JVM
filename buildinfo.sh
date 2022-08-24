@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# more infos about buildinfo at https://www.youtube.com/watch?v=ILgZexU07dc
-# Buildinfo HowTo https://www.youtube.com/watch?v=NFcjrJlxX-s
-# article about it : https://svenruppert.com/2021/10/08/the-power-of-jfrog-build-info-build-metadata/
-
 CURRENTDATE=`date +"%Y-%m-%d_%T"`
 echo $CURRENTDATE
 

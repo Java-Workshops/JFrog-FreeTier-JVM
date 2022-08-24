@@ -1,4 +1,4 @@
-FROM svenruppert001.jfrog.io/docker/svenruppert/adopt:1.8.0-172
+FROM svenr-docker.jfrog.io/svenruppert/adopt:1.8.0-172
 MAINTAINER sven.ruppert@gmail.com
 
 ARG USER_HOME_DIR="/root"

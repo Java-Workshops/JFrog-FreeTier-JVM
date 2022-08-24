@@ -1,0 +1,10 @@
+app:
+  greeting: "Hello"
+
+server:
+  port: 8080
+  host: 0.0.0.0
+
+microstream:
+  channel-count: 4
+  housekeeping-interval: 2000ms

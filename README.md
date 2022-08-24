@@ -10,7 +10,7 @@ JFrog offers you just the right tools for this.
 You can get access to the JFrog Platform and use it freely. 
 Artifactory, Xray, pipelines and more and this means that a 
 complete DevSecOps environment is at your disposal.
-@
+
 In this workshop, I will show you the individual components 
 step by step and help you set them up for your project. 
 This workshop is divided into several parts, 
@@ -222,6 +222,23 @@ If you are to lazy to read, try my JFrog HowTo.
 [![JFrog HowTos - 002 - Vulnerabilities Report](http://img.youtube.com/vi/0UAVl0cACPQ/mqdefault.jpg)](http://www.youtube.com/watch?v=0UAVl0cACPQ "JFrog HowTos - 002 - Vulnerabilities Report")
 
 
+## Build-Info - !TBD!
+
+[![JFrog HowTos - Build Info - EN](http://img.youtube.com/vi/NFcjrJlxX-s/mqdefault.jpg)](http://www.youtube.com/watch?v=NFcjrJlxX-s "JFrog HowTos - Build Info - EN")
+[![JFrog HowTos - Build Info - DE](http://img.youtube.com/vi/EPSvFqVSWGY/mqdefault.jpg)](http://www.youtube.com/watch?v=EPSvFqVSWGY "JFrog HowTos - Build Info - DE")
+
+
+
+Install the JFrog CLI: http://jfrog.com/getcli
+
+jfrog config add
+jfrog config show
+jfrog rt mvn-config
+jfrog rt mvn clean install --build-name jvm-freetier-workshop --build-number 001
+jfrog rt bp jvm-freetier-workshop 001
+
+
+
 ## Conclusion
 You have now all steps in your hand to build repositories, 
 build your projects and scann for known vulnerabilities. 
@@ -297,7 +314,7 @@ docker run \
        --name run \
        -v "$(pwd)":/usr/src/mymaven \
        -w /usr/src/mymaven \
-       sjavahow.jfrog.io/svenruppert/adopt:1.8.0-272 \
+       svenr.jfrog.io/svenruppert/adopt:1.8.0-272 \
        java -jar target/myapp.jar
 ```
 
@@ -308,7 +325,7 @@ docker run \
        --name compile \
        -v "$(pwd)":/usr/src/mymaven \
        -w /usr/src/mymaven \
-       svenruppert001.jfrog.io/docker/svenruppert/maven-3.6.3-adopt:1.8.0-172 \
+       svenr.jfrog.io/docker/svenruppert/maven-3.6.3-adopt:1.8.0-172 \
        mvn clean install -Dmaven.test.skip=true
 ```
 
